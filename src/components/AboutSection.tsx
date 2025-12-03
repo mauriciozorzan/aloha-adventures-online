@@ -1,18 +1,20 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import samanthaMoonImg from "@/assets/guides/samantha-moon.jpg";
+import joelSearlesImg from "@/assets/guides/joel-searles.jpg";
 
 const guides = [
   {
     name: "Samantha Moon",
     role: "Lead Guide & Founder",
     bio: "With a deep love for Hawaii's natural beauty, Samantha co-founded Wave & Wander to share authentic island experiences with adventurers worldwide.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop&crop=face"
+    image: samanthaMoonImg
   },
   {
     name: "Joel Searles",
     role: "Lead Guide & Founder",
     bio: "Joel's passion for exploration and storytelling brings every tour to life, creating unforgettable memories on Oahu's trails and beaches.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
+    image: joelSearlesImg
   }
 ];
 
