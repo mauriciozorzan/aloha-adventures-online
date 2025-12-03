@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import FeaturedTours from "@/components/FeaturedTours";
-import TestimonialsPreview from "@/components/TestimonialsPreview";
 import Footer from "@/components/Footer";
 import { Shield, Heart, Award, MapPin } from "lucide-react";
 
@@ -53,7 +52,6 @@ const Index = () => {
         </section>
 
         <FeaturedTours />
-        <TestimonialsPreview />
       </main>
       <Footer />
     </div>
