@@ -77,7 +77,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                    <a href="mailto:aloha@waveandwander.com" className="text-primary hover:underline">aloha@waveandwander.com</a>
+                    <a href="mailto:waveandwanderadventuretours@gmail.com" className="text-primary hover:underline text-sm break-all">waveandwanderadventuretours@gmail.com</a>
                     <p className="text-sm text-muted-foreground">We respond within 24 hours</p>
                   </div>
                 </div>
