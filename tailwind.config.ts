@@ -60,10 +60,18 @@ export default {
           DEFAULT: "hsl(var(--coral))",
           light: "hsl(var(--coral-light))",
         },
-        sunset: "hsl(var(--sunset))",
+        sunset: {
+          DEFAULT: "hsl(var(--sunset))",
+          warm: "hsl(var(--sunset-warm))",
+        },
         palm: "hsl(var(--palm))",
-        sand: "hsl(var(--sand))",
+        sand: {
+          DEFAULT: "hsl(var(--sand))",
+          warm: "hsl(var(--sand-warm))",
+        },
         lava: "hsl(var(--lava))",
+        golden: "hsl(var(--golden))",
+        honey: "hsl(var(--honey))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

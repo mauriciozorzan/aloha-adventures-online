@@ -6,105 +6,112 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 210 40% 15%;
+    --background: 40 35% 97%;
+    --foreground: 25 30% 18%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 210 40% 15%;
+    --card: 40 30% 99%;
+    --card-foreground: 25 30% 18%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 210 40% 15%;
+    --popover: 40 30% 99%;
+    --popover-foreground: 25 30% 18%;
 
-    --primary: 195 85% 40%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 175 55% 38%;
+    --primary-foreground: 40 30% 98%;
 
-    --secondary: 180 40% 94%;
-    --secondary-foreground: 195 85% 30%;
+    --secondary: 38 40% 93%;
+    --secondary-foreground: 25 40% 30%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 210 15% 45%;
+    --muted: 35 25% 94%;
+    --muted-foreground: 25 15% 45%;
 
-    --accent: 16 85% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 24 85% 58%;
+    --accent-foreground: 40 30% 98%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 40 30% 98%;
 
-    --border: 210 20% 90%;
-    --input: 210 20% 90%;
-    --ring: 195 85% 40%;
+    --border: 35 25% 88%;
+    --input: 35 25% 88%;
+    --ring: 175 55% 38%;
 
     --radius: 0.75rem;
 
-    /* Custom colors */
-    --ocean: 195 85% 40%;
-    --ocean-light: 195 75% 55%;
-    --ocean-dark: 195 90% 25%;
-    --coral: 16 85% 60%;
-    --coral-light: 16 80% 70%;
-    --sunset: 35 90% 55%;
-    --palm: 150 50% 35%;
-    --sand: 40 30% 92%;
-    --lava: 10 70% 40%;
+    /* Custom colors - Warm Hawaiian palette */
+    --ocean: 175 55% 38%;
+    --ocean-light: 175 50% 50%;
+    --ocean-dark: 180 60% 28%;
+    --coral: 24 85% 58%;
+    --coral-light: 20 80% 68%;
+    --sunset: 32 95% 55%;
+    --sunset-warm: 20 90% 50%;
+    --palm: 145 45% 38%;
+    --sand: 38 40% 92%;
+    --sand-warm: 35 50% 85%;
+    --lava: 12 70% 42%;
+    --golden: 42 90% 55%;
+    --honey: 38 85% 50%;
 
-    /* Gradients */
-    --gradient-ocean: linear-gradient(135deg, hsl(195, 85%, 40%) 0%, hsl(180, 70%, 45%) 100%);
-    --gradient-sunset: linear-gradient(135deg, hsl(35, 90%, 55%) 0%, hsl(16, 85%, 60%) 100%);
-    --gradient-tropical: linear-gradient(180deg, hsl(195, 85%, 40%) 0%, hsl(150, 50%, 35%) 100%);
-    --gradient-hero: linear-gradient(180deg, hsla(210, 40%, 15%, 0.3) 0%, hsla(210, 40%, 15%, 0.7) 100%);
+    /* Gradients - Warm & Inviting */
+    --gradient-ocean: linear-gradient(135deg, hsl(175, 55%, 38%) 0%, hsl(170, 50%, 45%) 100%);
+    --gradient-sunset: linear-gradient(135deg, hsl(42, 90%, 55%) 0%, hsl(24, 85%, 58%) 100%);
+    --gradient-tropical: linear-gradient(180deg, hsl(175, 55%, 38%) 0%, hsl(145, 45%, 38%) 100%);
+    --gradient-hero: linear-gradient(180deg, hsla(25, 30%, 18%, 0.2) 0%, hsla(25, 30%, 18%, 0.6) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(38, 85%, 50%) 0%, hsl(24, 85%, 58%) 100%);
+    --gradient-golden: linear-gradient(180deg, hsla(42, 90%, 55%, 0.1) 0%, hsla(38, 40%, 92%, 0.8) 100%);
 
-    /* Shadows */
-    --shadow-card: 0 4px 20px hsla(210, 40%, 15%, 0.08);
-    --shadow-elevated: 0 8px 30px hsla(210, 40%, 15%, 0.12);
-    --shadow-glow: 0 0 40px hsla(195, 85%, 40%, 0.3);
+    /* Shadows - Warmer tones */
+    --shadow-card: 0 4px 20px hsla(25, 30%, 18%, 0.06);
+    --shadow-elevated: 0 8px 30px hsla(25, 30%, 18%, 0.1);
+    --shadow-glow: 0 0 40px hsla(42, 90%, 55%, 0.25);
+    --shadow-warm: 0 4px 20px hsla(24, 85%, 58%, 0.15);
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 40 30% 98%;
+    --sidebar-foreground: 25 30% 26%;
+    --sidebar-primary: 25 30% 18%;
+    --sidebar-primary-foreground: 40 30% 98%;
+    --sidebar-accent: 38 40% 95%;
+    --sidebar-accent-foreground: 25 30% 18%;
+    --sidebar-border: 35 25% 90%;
+    --sidebar-ring: 175 55% 45%;
   }
 
   .dark {
-    --background: 210 40% 10%;
-    --foreground: 210 20% 98%;
+    --background: 25 25% 10%;
+    --foreground: 40 25% 95%;
 
-    --card: 210 35% 14%;
-    --card-foreground: 210 20% 98%;
+    --card: 25 20% 14%;
+    --card-foreground: 40 25% 95%;
 
-    --popover: 210 35% 14%;
-    --popover-foreground: 210 20% 98%;
+    --popover: 25 20% 14%;
+    --popover-foreground: 40 25% 95%;
 
-    --primary: 195 80% 50%;
-    --primary-foreground: 210 40% 10%;
+    --primary: 175 50% 50%;
+    --primary-foreground: 25 25% 10%;
 
-    --secondary: 210 30% 20%;
-    --secondary-foreground: 195 80% 60%;
+    --secondary: 25 20% 18%;
+    --secondary-foreground: 175 50% 60%;
 
-    --muted: 210 30% 18%;
-    --muted-foreground: 210 15% 60%;
+    --muted: 25 20% 16%;
+    --muted-foreground: 35 15% 60%;
 
-    --accent: 16 80% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 24 80% 55%;
+    --accent-foreground: 40 30% 98%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 40 25% 95%;
 
-    --border: 210 30% 20%;
-    --input: 210 30% 20%;
-    --ring: 195 80% 50%;
+    --border: 25 20% 20%;
+    --input: 25 20% 20%;
+    --ring: 175 50% 50%;
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 25 25% 10%;
+    --sidebar-foreground: 40 25% 95%;
+    --sidebar-primary: 175 50% 50%;
+    --sidebar-primary-foreground: 40 30% 98%;
+    --sidebar-accent: 25 20% 15%;
+    --sidebar-accent-foreground: 40 25% 95%;
+    --sidebar-border: 25 20% 18%;
+    --sidebar-ring: 175 50% 50%;
   }
 }
 
@@ -150,6 +157,14 @@
     background-image: var(--gradient-hero);
   }
 
+  .bg-gradient-warm {
+    background-image: var(--gradient-warm);
+  }
+
+  .bg-gradient-golden {
+    background-image: var(--gradient-golden);
+  }
+
   .shadow-card {
     box-shadow: var(--shadow-card);
   }
@@ -160,6 +175,10 @@
 
   .shadow-glow {
     box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-warm {
+    box-shadow: var(--shadow-warm);
   }
 }
 
