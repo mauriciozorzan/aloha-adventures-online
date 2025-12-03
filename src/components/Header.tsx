@@ -1,8 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, Waves } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/logo.jpg";
 
 const navLinks = [
   { name: 'Home', path: '/' },
@@ -34,17 +35,26 @@ const Header = () => {
     )}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
-          <Link to="/" className="flex items-center gap-2">
-            <Waves className={cn(
-              "w-8 h-8 transition-colors",
-              isScrolled ? "text-primary" : "text-primary-foreground"
-            )} />
-            <span className={cn(
-              "text-xl md:text-2xl font-serif font-bold transition-colors",
-              isScrolled ? "text-foreground" : "text-primary-foreground"
-            )}>
-              Wave & Wander
-            </span>
+          <Link to="/" className="flex items-center gap-3">
+            <img 
+              src={logo} 
+              alt="Wave & Wander Adventure Tours" 
+              className="w-12 h-12 md:w-14 md:h-14 rounded-full object-cover"
+            />
+            <div className="hidden sm:block">
+              <span className={cn(
+                "text-lg md:text-xl font-serif font-bold transition-colors leading-tight block",
+                isScrolled ? "text-foreground" : "text-primary-foreground"
+              )}>
+                Wave & Wander
+              </span>
+              <span className={cn(
+                "text-xs font-medium transition-colors",
+                isScrolled ? "text-primary" : "text-primary-foreground/80"
+              )}>
+                Adventure Tours
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
