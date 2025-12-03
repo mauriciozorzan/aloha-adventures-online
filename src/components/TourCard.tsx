@@ -43,13 +43,11 @@ const TourCard = ({ tour, index = 0 }: TourCardProps) => {
         />
         <div className="absolute top-4 right-4 flex flex-col items-end gap-1">
           <span className="bg-coral text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold">
-            {tour.tourType === 'sunrise' ? '$150–$320/person' : `From $${tour.pricing[4]}/person`}
+            {tour.tourType === 'sunrise' ? '$150–$320/person' : '$195–$520/person'}
           </span>
-          {tour.tourType === 'sunrise' && (
-            <span className="bg-coral/90 text-accent-foreground px-2 py-0.5 rounded-full text-xs">
-              Varies by group size
-            </span>
-          )}
+          <span className="bg-coral/90 text-accent-foreground px-2 py-0.5 rounded-full text-xs">
+            Varies by group size
+          </span>
         </div>
         <div className="absolute top-4 left-4">
           <span className="bg-background/90 backdrop-blur-sm text-foreground px-3 py-1 rounded-full text-sm font-medium">
