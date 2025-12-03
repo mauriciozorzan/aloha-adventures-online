@@ -10,6 +10,7 @@ import { format } from "date-fns";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import type { Tour } from "@/data/tours";
+import { getPricePerPerson } from "@/data/tours";
 
 interface BookingFormProps {
   tour: Tour;
@@ -19,15 +20,15 @@ const BookingForm = ({ tour }: BookingFormProps) => {
   const { toast } = useToast();
   const [date, setDate] = useState<Date>();
   const [time, setTime] = useState<string>("");
-  const [adults, setAdults] = useState(2);
-  const [children, setChildren] = useState(0);
+  const [guests, setGuests] = useState(2);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isBooked, setIsBooked] = useState(false);
 
-  const totalPrice = (adults * tour.price) + (children * tour.price * 0.5);
+  const pricePerPerson = getPricePerPerson(tour.pricing, guests);
+  const totalPrice = guests * pricePerPerson;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,7 +58,7 @@ const BookingForm = ({ tour }: BookingFormProps) => {
 
   if (isBooked) {
     return (
-      <div className="bg-card rounded-2xl p-8 shadow-elevated text-center">
+      <div className="bg-card rounded-b-2xl p-8 shadow-elevated text-center">
         <div className="w-16 h-16 bg-palm/10 rounded-full flex items-center justify-center mx-auto mb-4">
           <Check className="w-8 h-8 text-palm" />
         </div>
@@ -65,11 +66,11 @@ const BookingForm = ({ tour }: BookingFormProps) => {
           Booking Confirmed!
         </h3>
         <p className="text-muted-foreground mb-4">
-          Thank you for booking with Aloha Tours. We've sent a confirmation email with all the details.
+          Thank you for booking with Wave & Wander. We've sent a confirmation email with all the details.
         </p>
         <div className="bg-secondary rounded-xl p-4 text-left mb-6">
           <p className="text-sm text-muted-foreground mb-1">Confirmation Number</p>
-          <p className="font-mono font-bold text-primary">AT-{Math.random().toString(36).substring(2, 8).toUpperCase()}</p>
+          <p className="font-mono font-bold text-primary">WW-{Math.random().toString(36).substring(2, 8).toUpperCase()}</p>
         </div>
         <Button variant="hero" onClick={() => setIsBooked(false)}>
           Book Another Tour
@@ -79,7 +80,7 @@ const BookingForm = ({ tour }: BookingFormProps) => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-6 md:p-8 shadow-elevated">
+    <form onSubmit={handleSubmit} className="bg-card rounded-b-2xl p-6 md:p-8 shadow-elevated">
       <h3 className="text-xl font-serif font-bold text-card-foreground mb-6">
         Book This Tour
       </h3>
@@ -128,47 +129,26 @@ const BookingForm = ({ tour }: BookingFormProps) => {
       </div>
 
       {/* Guest Count */}
-      <div className="grid grid-cols-2 gap-4 mb-4">
-        <div>
-          <Label className="mb-2 block">Adults</Label>
-          <div className="flex items-center gap-3 bg-secondary rounded-lg p-2">
-            <button
-              type="button"
-              onClick={() => setAdults(Math.max(1, adults - 1))}
-              className="w-8 h-8 rounded-md bg-background flex items-center justify-center hover:bg-muted transition-colors"
-            >
-              <Minus className="w-4 h-4" />
-            </button>
-            <span className="flex-1 text-center font-semibold">{adults}</span>
-            <button
-              type="button"
-              onClick={() => setAdults(adults + 1)}
-              className="w-8 h-8 rounded-md bg-background flex items-center justify-center hover:bg-muted transition-colors"
-            >
-              <Plus className="w-4 h-4" />
-            </button>
-          </div>
+      <div className="mb-4">
+        <Label className="mb-2 block">Number of Guests</Label>
+        <div className="flex items-center gap-3 bg-secondary rounded-lg p-3">
+          <button
+            type="button"
+            onClick={() => setGuests(Math.max(1, guests - 1))}
+            className="w-10 h-10 rounded-md bg-background flex items-center justify-center hover:bg-muted transition-colors"
+          >
+            <Minus className="w-4 h-4" />
+          </button>
+          <span className="flex-1 text-center font-semibold text-lg">{guests}</span>
+          <button
+            type="button"
+            onClick={() => setGuests(Math.min(8, guests + 1))}
+            className="w-10 h-10 rounded-md bg-background flex items-center justify-center hover:bg-muted transition-colors"
+          >
+            <Plus className="w-4 h-4" />
+          </button>
         </div>
-        <div>
-          <Label className="mb-2 block">Children (50% off)</Label>
-          <div className="flex items-center gap-3 bg-secondary rounded-lg p-2">
-            <button
-              type="button"
-              onClick={() => setChildren(Math.max(0, children - 1))}
-              className="w-8 h-8 rounded-md bg-background flex items-center justify-center hover:bg-muted transition-colors"
-            >
-              <Minus className="w-4 h-4" />
-            </button>
-            <span className="flex-1 text-center font-semibold">{children}</span>
-            <button
-              type="button"
-              onClick={() => setChildren(children + 1)}
-              className="w-8 h-8 rounded-md bg-background flex items-center justify-center hover:bg-muted transition-colors"
-            >
-              <Plus className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
+        <p className="text-xs text-muted-foreground mt-2">Max 8 guests per tour</p>
       </div>
 
       {/* Contact Info */}
@@ -210,18 +190,12 @@ const BookingForm = ({ tour }: BookingFormProps) => {
       {/* Price Summary */}
       <div className="bg-secondary rounded-xl p-4 mb-6">
         <div className="flex justify-between text-sm mb-2">
-          <span className="text-muted-foreground">{adults} Adult(s) × ${tour.price}</span>
-          <span>${adults * tour.price}</span>
+          <span className="text-muted-foreground">{guests} Guest(s) × ${pricePerPerson}/person</span>
+          <span>${totalPrice}</span>
         </div>
-        {children > 0 && (
-          <div className="flex justify-between text-sm mb-2">
-            <span className="text-muted-foreground">{children} Child(ren) × ${tour.price * 0.5}</span>
-            <span>${children * tour.price * 0.5}</span>
-          </div>
-        )}
         <div className="border-t border-border pt-2 mt-2 flex justify-between font-bold text-lg">
           <span>Total</span>
-          <span className="text-primary">${totalPrice.toFixed(2)}</span>
+          <span className="text-primary">${totalPrice}</span>
         </div>
       </div>
 

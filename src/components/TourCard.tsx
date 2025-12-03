@@ -43,7 +43,7 @@ const TourCard = ({ tour, index = 0 }: TourCardProps) => {
         />
         <div className="absolute top-4 right-4">
           <span className="bg-coral text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold">
-            From ${tour.price}
+            From ${tour.pricing[4]}/person
           </span>
         </div>
         <div className="absolute top-4 left-4">
