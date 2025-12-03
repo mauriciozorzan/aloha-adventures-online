@@ -7,20 +7,22 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Clock, MapPin, Users, CheckCircle, XCircle, Mountain } from "lucide-react";
 
 // Import tour images
-import naPaliImg from "@/assets/tours/na-pali.jpg";
-import volcanoImg from "@/assets/tours/volcano.jpg";
-import molokiniImg from "@/assets/tours/molokini.jpg";
-import luauImg from "@/assets/tours/luau.jpg";
-import haleakalaImg from "@/assets/tours/haleakala.jpg";
-import whaleImg from "@/assets/tours/whale.jpg";
+import kokoHeadImg from "@/assets/tours/koko-head.jpg";
+import lanikaiPillboxImg from "@/assets/tours/lanikai-pillbox.jpg";
+import windwardImg from "@/assets/tours/windward.jpg";
+import northShoreImg from "@/assets/tours/north-shore.jpg";
+import kaneoheImg from "@/assets/tours/kaneohe.jpg";
+import makapuuImg from "@/assets/tours/makapuu.jpg";
+import customImg from "@/assets/tours/custom.jpg";
 
 const tourImages: Record<string, string> = {
-  'na-pali-coast': naPaliImg,
-  'volcano-helicopter': volcanoImg,
-  'snorkel-molokini': molokiniImg,
-  'luau-experience': luauImg,
-  'sunrise-haleakala': haleakalaImg,
-  'whale-watching': whaleImg,
+  'koko-head-sunrise': kokoHeadImg,
+  'lanikai-pillbox-sunrise': lanikaiPillboxImg,
+  'windward-coast-adventure': windwardImg,
+  'north-shore-experience': northShoreImg,
+  'kaneohe-scenic-tour': kaneoheImg,
+  'makapuu-waimanalo': makapuuImg,
+  'custom-adventure': customImg,
 };
 
 const TourDetail = () => {
@@ -29,12 +31,13 @@ const TourDetail = () => {
 
   if (!tour) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <Header />
+        <div className="text-center pt-20">
           <h1 className="text-4xl font-serif font-bold mb-4">Tour Not Found</h1>
           <p className="text-muted-foreground mb-6">The tour you're looking for doesn't exist.</p>
           <Button variant="hero" asChild>
-            <Link to="/">Back to Home</Link>
+            <Link to="/tours">Browse All Tours</Link>
           </Button>
         </div>
       </div>
@@ -56,7 +59,7 @@ const TourDetail = () => {
         <div className="absolute inset-0 flex items-end">
           <div className="container mx-auto px-4 pb-8 md:pb-12">
             <Link
-              to="/"
+              to="/tours"
               className="inline-flex items-center gap-2 text-primary-foreground/80 hover:text-primary-foreground mb-4 transition-colors"
             >
               <ArrowLeft className="w-4 h-4" />

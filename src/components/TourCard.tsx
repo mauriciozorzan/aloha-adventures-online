@@ -4,28 +4,30 @@ import { Button } from "@/components/ui/button";
 import type { Tour } from "@/data/tours";
 
 // Import tour images
-import naPaliImg from "@/assets/tours/na-pali.jpg";
-import volcanoImg from "@/assets/tours/volcano.jpg";
-import molokiniImg from "@/assets/tours/molokini.jpg";
-import luauImg from "@/assets/tours/luau.jpg";
-import haleakalaImg from "@/assets/tours/haleakala.jpg";
-import whaleImg from "@/assets/tours/whale.jpg";
+import kokoHeadImg from "@/assets/tours/koko-head.jpg";
+import lanikaiPillboxImg from "@/assets/tours/lanikai-pillbox.jpg";
+import windwardImg from "@/assets/tours/windward.jpg";
+import northShoreImg from "@/assets/tours/north-shore.jpg";
+import kaneoheImg from "@/assets/tours/kaneohe.jpg";
+import makapuuImg from "@/assets/tours/makapuu.jpg";
+import customImg from "@/assets/tours/custom.jpg";
 
 const tourImages: Record<string, string> = {
-  'na-pali-coast': naPaliImg,
-  'volcano-helicopter': volcanoImg,
-  'snorkel-molokini': molokiniImg,
-  'luau-experience': luauImg,
-  'sunrise-haleakala': haleakalaImg,
-  'whale-watching': whaleImg,
+  'koko-head-sunrise': kokoHeadImg,
+  'lanikai-pillbox-sunrise': lanikaiPillboxImg,
+  'windward-coast-adventure': windwardImg,
+  'north-shore-experience': northShoreImg,
+  'kaneohe-scenic-tour': kaneoheImg,
+  'makapuu-waimanalo': makapuuImg,
+  'custom-adventure': customImg,
 };
 
 interface TourCardProps {
   tour: Tour;
-  index: number;
+  index?: number;
 }
 
-const TourCard = ({ tour, index }: TourCardProps) => {
+const TourCard = ({ tour, index = 0 }: TourCardProps) => {
   return (
     <Link
       to={`/tour/${tour.id}`}
@@ -41,7 +43,7 @@ const TourCard = ({ tour, index }: TourCardProps) => {
         />
         <div className="absolute top-4 right-4">
           <span className="bg-coral text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold">
-            ${tour.price}
+            From ${tour.price}
           </span>
         </div>
         <div className="absolute top-4 left-4">
