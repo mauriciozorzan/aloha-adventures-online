@@ -80,7 +80,7 @@ export const tours: Tour[] = [
       'Gratuities'
     ],
     difficulty: 'Moderate',
-    groupSize: 'Max 10 people',
+    groupSize: 'Max 8 people',
     meetingPoint: 'Kailua Beach Park',
     startTimes: ['5:15 AM', '5:45 AM'],
     category: 'hiking'
@@ -115,7 +115,7 @@ export const tours: Tour[] = [
       'Additional food/drinks'
     ],
     difficulty: 'Easy',
-    groupSize: 'Max 12 people',
+    groupSize: 'Max 8 people',
     meetingPoint: 'Waikiki hotel pickup',
     startTimes: ['7:00 AM'],
     category: 'sightseeing'
@@ -148,7 +148,7 @@ export const tours: Tour[] = [
       'Additional snacks/drinks'
     ],
     difficulty: 'Easy',
-    groupSize: 'Max 10 people',
+    groupSize: 'Max 8 people',
     meetingPoint: 'Waikiki hotel pickup',
     startTimes: ['10:00 AM'],
     category: 'sightseeing'
@@ -182,7 +182,7 @@ export const tours: Tour[] = [
       'Additional food/souvenirs'
     ],
     difficulty: 'Easy',
-    groupSize: 'Max 14 people',
+    groupSize: 'Max 8 people',
     meetingPoint: 'Waikiki hotel pickup',
     startTimes: ['8:00 AM'],
     category: 'sightseeing'
@@ -215,7 +215,7 @@ export const tours: Tour[] = [
       'Souvenirs'
     ],
     difficulty: 'Easy',
-    groupSize: 'Max 10 people',
+    groupSize: 'Max 8 people',
     meetingPoint: 'Waikiki hotel pickup',
     startTimes: ['8:30 AM', '12:30 PM'],
     category: 'sightseeing'
