@@ -1,10 +1,16 @@
 import { useParams, Link } from "react-router-dom";
-import { getTourById } from "@/data/tours";
+import { getTourById, tourFAQs } from "@/data/tours";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BookingForm from "@/components/BookingForm";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Clock, MapPin, Users, CheckCircle, XCircle, Mountain } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { ArrowLeft, Clock, MapPin, Users, CheckCircle, Mountain, Sparkles, Car } from "lucide-react";
 
 // Import tour images
 import kokoHeadImg from "@/assets/tours/koko-head.jpg";
@@ -65,27 +71,12 @@ const TourDetail = () => {
               <ArrowLeft className="w-4 h-4" />
               Back to Tours
             </Link>
-            <h1 className="text-3xl md:text-5xl font-serif font-bold text-primary-foreground mb-4">
+            <h1 className="text-3xl md:text-5xl font-serif font-bold text-primary-foreground mb-2">
               {tour.name}
             </h1>
-            <div className="flex flex-wrap items-center gap-4 text-primary-foreground/90">
-              <div className="flex items-center gap-2">
-                <MapPin className="w-5 h-5" />
-                <span>{tour.location}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-5 h-5" />
-                <span>{tour.duration}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Users className="w-5 h-5" />
-                <span>{tour.groupSize}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mountain className="w-5 h-5" />
-                <span>{tour.difficulty}</span>
-              </div>
-            </div>
+            <p className="text-lg md:text-xl text-primary-foreground/90 italic">
+              Small-group, boutique-guided experience
+            </p>
           </div>
         </div>
       </div>
@@ -94,23 +85,30 @@ const TourDetail = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Main Content */}
-          <div className="lg:col-span-2">
-            {/* Description */}
-            <section className="mb-10">
-              <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
-                About This Tour
-              </h2>
+          <div className="lg:col-span-2 space-y-10">
+            
+            {/* ⭐ Tour Description */}
+            <section>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-2xl">⭐</span>
+                <h2 className="text-2xl font-serif font-bold text-foreground">
+                  Tour Description
+                </h2>
+              </div>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 {tour.fullDescription}
               </p>
             </section>
 
-            {/* Highlights */}
-            <section className="mb-10">
-              <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
-                Tour Highlights
-              </h2>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {/* 🌿 What You'll Experience */}
+            <section>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-2xl">🌿</span>
+                <h2 className="text-2xl font-serif font-bold text-foreground">
+                  What You'll Experience
+                </h2>
+              </div>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
                 {tour.highlights.map((highlight, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-palm mt-0.5 flex-shrink-0" />
@@ -118,36 +116,85 @@ const TourDetail = () => {
                   </li>
                 ))}
               </ul>
+              <div className="flex flex-wrap gap-2 mt-4">
+                {tour.emotionalWords.map((word, index) => (
+                  <span
+                    key={index}
+                    className="px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium"
+                  >
+                    {word}
+                  </span>
+                ))}
+              </div>
             </section>
 
-            {/* What's Included */}
-            <section className="mb-10">
-              <h2 className="text-2xl font-serif font-bold text-foreground mb-4">
-                What's Included
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-palm/5 rounded-xl p-6">
-                  <h3 className="font-semibold text-palm mb-3">Included</h3>
-                  <ul className="space-y-2">
-                    {tour.included.map((item, index) => (
-                      <li key={index} className="flex items-start gap-2 text-foreground">
-                        <CheckCircle className="w-4 h-4 text-palm mt-1 flex-shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+            {/* 🚙 What's Included */}
+            <section>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-2xl">🚙</span>
+                <h2 className="text-2xl font-serif font-bold text-foreground">
+                  What's Included
+                </h2>
+              </div>
+              <div className="bg-palm/5 rounded-xl p-6">
+                <ul className="space-y-2">
+                  {tour.included.map((item, index) => (
+                    <li key={index} className="flex items-start gap-2 text-foreground">
+                      <CheckCircle className="w-4 h-4 text-palm mt-1 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+
+            {/* Tour Details Grid */}
+            <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* 🕒 Duration */}
+              <div className="bg-secondary rounded-xl p-6">
+                <div className="flex items-center gap-2 mb-2">
+                  <Clock className="w-5 h-5 text-primary" />
+                  <h3 className="font-semibold text-foreground">Duration</h3>
                 </div>
-                <div className="bg-lava/5 rounded-xl p-6">
-                  <h3 className="font-semibold text-lava mb-3">Not Included</h3>
-                  <ul className="space-y-2">
-                    {tour.notIncluded.map((item, index) => (
-                      <li key={index} className="flex items-start gap-2 text-foreground">
-                        <XCircle className="w-4 h-4 text-lava mt-1 flex-shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <p className="text-muted-foreground text-lg">{tour.duration}</p>
+              </div>
+
+              {/* 👣 Activity Level */}
+              <div className="bg-secondary rounded-xl p-6">
+                <div className="flex items-center gap-2 mb-2">
+                  <Mountain className="w-5 h-5 text-primary" />
+                  <h3 className="font-semibold text-foreground">Activity Level</h3>
                 </div>
+                <p className="text-muted-foreground text-lg">{tour.difficulty}</p>
+              </div>
+
+              {/* Group Size */}
+              <div className="bg-secondary rounded-xl p-6">
+                <div className="flex items-center gap-2 mb-2">
+                  <Users className="w-5 h-5 text-primary" />
+                  <h3 className="font-semibold text-foreground">Group Size</h3>
+                </div>
+                <p className="text-muted-foreground text-lg">{tour.groupSize}</p>
+              </div>
+            </section>
+
+            {/* 📍 Regions We Explore */}
+            <section>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-2xl">📍</span>
+                <h2 className="text-2xl font-serif font-bold text-foreground">
+                  Regions We Explore
+                </h2>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                {tour.regions.map((region, index) => (
+                  <span
+                    key={index}
+                    className="px-4 py-2 bg-ocean/10 text-ocean border border-ocean/20 rounded-lg font-medium"
+                  >
+                    {region}
+                  </span>
+                ))}
               </div>
             </section>
 
@@ -160,6 +207,28 @@ const TourDetail = () => {
                 <MapPin className="w-5 h-5 text-primary" />
                 {tour.meetingPoint}
               </p>
+            </section>
+
+            {/* ❓ FAQ */}
+            <section>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-2xl">❓</span>
+                <h2 className="text-2xl font-serif font-bold text-foreground">
+                  Frequently Asked Questions
+                </h2>
+              </div>
+              <Accordion type="single" collapsible className="w-full">
+                {tourFAQs.map((faq, index) => (
+                  <AccordionItem key={index} value={`faq-${index}`}>
+                    <AccordionTrigger className="text-left text-foreground hover:text-primary">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
             </section>
           </div>
 

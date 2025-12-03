@@ -8,6 +8,8 @@ export interface Tour {
   location: string;
   image: string;
   highlights: string[];
+  emotionalWords: string[];
+  regions: string[];
   included: string[];
   notIncluded: string[];
   difficulty: 'Easy' | 'Moderate' | 'Challenging';
@@ -16,6 +18,29 @@ export interface Tour {
   startTimes: string[];
   category: 'hiking' | 'sightseeing' | 'beach' | 'custom';
 }
+
+export const tourFAQs = [
+  {
+    question: "What should I bring?",
+    answer: "Comfortable walking shoes, sunscreen, hat, sunglasses, and a light jacket. For sunrise tours, dress in layers as mornings can be cool."
+  },
+  {
+    question: "What if it rains?",
+    answer: "Light rain is common in Hawaii and tours typically proceed. In case of severe weather, we'll reschedule or offer a full refund."
+  },
+  {
+    question: "Are tours wheelchair accessible?",
+    answer: "Some tours have limited accessibility. Please contact us to discuss specific needs and we'll do our best to accommodate."
+  },
+  {
+    question: "Can I bring children?",
+    answer: "Yes! Most tours are family-friendly. Age recommendations vary by tour difficulty. Contact us for specific guidance."
+  },
+  {
+    question: "What's your cancellation policy?",
+    answer: "Free cancellation up to 24 hours before your tour. Cancellations within 24 hours are non-refundable."
+  }
+];
 
 export const tours: Tour[] = [
   {
@@ -34,6 +59,8 @@ export const tours: Tour[] = [
       'Learn WWII history of the tramway',
       'Small group experience with expert guide'
     ],
+    emotionalWords: ['Intense', 'Rewarding', 'Unforgettable'],
+    regions: ['Hawaii Kai', 'Southeast Oahu'],
     included: [
       'Professional hiking guide',
       'Headlamps for pre-dawn start',
@@ -68,6 +95,8 @@ export const tours: Tour[] = [
       'Views of Lanikai Beach and Kailua Bay',
       'Perfect for photography'
     ],
+    emotionalWords: ['Soft', 'Dreamy', 'Scenic'],
+    regions: ['Kailua', 'Windward Oahu'],
     included: [
       'Expert hiking guide',
       'Headlamps',
@@ -102,6 +131,8 @@ export const tours: Tour[] = [
       'Explore Kailua town shops & cafes',
       'See the iconic Mokulua Islands'
     ],
+    emotionalWords: ['Breezy', 'Scenic', 'Relaxing'],
+    regions: ['Makapuʻu', 'Waimānalo', 'Kailua', 'Lanikai'],
     included: [
       'Hotel pickup/drop-off (Waikiki)',
       'Professional guide',
@@ -136,6 +167,8 @@ export const tours: Tour[] = [
       'Authentic local communities',
       'Golden sunset finale'
     ],
+    emotionalWords: ['Rugged', 'Golden', 'Adventurous'],
+    regions: ['Kaʻena Point', 'Waiʻanae Coast', 'West Oahu'],
     included: [
       'Hotel pickup/drop-off (Waikiki)',
       'Professional guide',
@@ -169,6 +202,8 @@ export const tours: Tour[] = [
       'Explore tidepools at Sharks Cove',
       'See Sunset Beach & Pipeline'
     ],
+    emotionalWords: ['Iconic', 'Laid-back', 'Authentic'],
+    regions: ['Haleʻiwa', 'Waimea Bay', 'Sunset Beach', 'Sharks Cove'],
     included: [
       'Round-trip transportation',
       'Professional guide',
@@ -203,6 +238,8 @@ export const tours: Tour[] = [
       'See Crouching Lion rock formation',
       'Koʻolau Mountain scenic views'
     ],
+    emotionalWords: ['Peaceful', 'Serene', 'Spiritual'],
+    regions: ['Kāneʻohe', 'Kualoa', 'Koʻolau Mountains'],
     included: [
       'Hotel pickup/drop-off',
       'Temple entrance fee',
@@ -236,6 +273,8 @@ export const tours: Tour[] = [
       'Access to hidden gems',
       'Personalized recommendations'
     ],
+    emotionalWords: ['Personalized', 'Flexible', 'Exclusive'],
+    regions: ['Island-wide', 'Your Choice'],
     included: [
       'Private professional guide',
       'Luxury vehicle transportation',
