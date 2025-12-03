@@ -73,7 +73,7 @@ const TourCard = ({ tour, index = 0 }: TourCardProps) => {
               <span>Up to 4 guests</span>
             </div>
           </div>
-          <p className="text-xs text-muted-foreground/70">(adjustments available up to 8)</p>
+          <p className="text-xs text-muted-foreground/70">Can expand to 8 people</p>
         </div>
 
         <div className="flex items-center justify-between">
