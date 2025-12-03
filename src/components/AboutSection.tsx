@@ -1,25 +1,24 @@
-import { Shield, Heart, Award, Users } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
-const features = [
+const guides = [
   {
-    icon: Shield,
-    title: "Safety First",
-    description: "All our tours meet the highest safety standards with certified guides and equipment."
+    name: "Kainoa",
+    role: "Lead Guide & Founder",
+    bio: "Born and raised on Oahu, Kainoa has spent 15+ years sharing the beauty and stories of the islands.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
   },
   {
-    icon: Heart,
-    title: "Local Expertise",
-    description: "Our guides are born and raised in Hawaii, sharing authentic stories and hidden gems."
+    name: "Leilani",
+    role: "Senior Guide",
+    bio: "A passionate hiker and storyteller, Leilani brings Hawaiian history and culture to life on every tour.",
+    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop&crop=face"
   },
   {
-    icon: Award,
-    title: "Top Rated",
-    description: "Consistently rated 5 stars by thousands of satisfied adventurers."
-  },
-  {
-    icon: Users,
-    title: "Small Groups",
-    description: "Intimate group sizes ensure personalized attention and better experiences."
+    name: "Keoni",
+    role: "Adventure Guide",
+    bio: "Keoni's energy and local knowledge make every sunrise hike an unforgettable experience.",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face"
   }
 ];
 
@@ -27,60 +26,66 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-20 md:py-28 bg-secondary">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              About Us
-            </span>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground mt-2 mb-6">
-              Creating Memories Since 1985
-            </h2>
-            <p className="text-muted-foreground text-lg mb-6">
-              For nearly four decades, Aloha Tours has been the premier choice for travelers 
-              seeking authentic Hawaiian experiences. What started as a small family operation 
-              has grown into Hawaii's most trusted tour company, while maintaining the warmth 
-              and aloha spirit that defines our islands.
-            </p>
-            <p className="text-muted-foreground text-lg mb-8">
-              Every tour is led by local experts who share not just the beauty of Hawaii, 
-              but its rich history, culture, and the stories passed down through generations.
-            </p>
+        {/* About Wave & Wander */}
+        <div className="max-w-3xl mx-auto text-center mb-20">
+          <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+            About Us
+          </span>
+          <h2 className="text-3xl md:text-5xl font-serif font-bold text-foreground mt-2 mb-6">
+            Wave & Wander Adventure Tours
+          </h2>
+          <p className="text-muted-foreground text-lg mb-6">
+            Where adventure meets aloha. We're a small, locally-owned tour company based on Oahu, 
+            dedicated to sharing the authentic beauty of Hawaii with travelers from around the world.
+          </p>
+          <p className="text-muted-foreground text-lg mb-8">
+            Our intimate, small-group tours (max 8 guests) ensure personalized attention and 
+            genuine connections. Whether you're chasing sunrises from volcanic craters, exploring 
+            hidden beaches, or discovering the stories behind sacred sites—we'll show you the 
+            Hawaii that locals love.
+          </p>
+          <Link to="/about">
+            <Button variant="outline" size="lg">
+              Learn More About Us
+            </Button>
+          </Link>
+        </div>
 
-            <div className="grid grid-cols-2 gap-6">
-              <div className="text-center p-4">
-                <div className="text-4xl font-bold text-primary mb-1">38+</div>
-                <div className="text-sm text-muted-foreground">Years of Experience</div>
-              </div>
-              <div className="text-center p-4">
-                <div className="text-4xl font-bold text-primary mb-1">150K+</div>
-                <div className="text-sm text-muted-foreground">Happy Travelers</div>
-              </div>
-              <div className="text-center p-4">
-                <div className="text-4xl font-bold text-primary mb-1">50+</div>
-                <div className="text-sm text-muted-foreground">Tour Options</div>
-              </div>
-              <div className="text-center p-4">
-                <div className="text-4xl font-bold text-primary mb-1">4.9★</div>
-                <div className="text-sm text-muted-foreground">Average Rating</div>
-              </div>
-            </div>
+        {/* Meet Your Guides */}
+        <div>
+          <div className="text-center mb-12">
+            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+              Your Local Experts
+            </span>
+            <h3 className="text-2xl md:text-4xl font-serif font-bold text-foreground mt-2">
+              Meet Your Guides
+            </h3>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {features.map((feature, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            {guides.map((guide) => (
               <div
-                key={feature.title}
-                className="bg-card p-6 rounded-2xl shadow-card hover:shadow-elevated transition-all duration-300"
+                key={guide.name}
+                className="bg-card rounded-2xl overflow-hidden shadow-card hover:shadow-elevated transition-all duration-300 text-center"
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4">
-                  <feature.icon className="w-6 h-6 text-primary" />
+                <div className="aspect-square overflow-hidden">
+                  <img
+                    src={guide.image}
+                    alt={guide.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="font-semibold text-lg text-card-foreground mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground text-sm">
-                  {feature.description}
-                </p>
+                <div className="p-6">
+                  <h4 className="font-semibold text-xl text-card-foreground mb-1">
+                    {guide.name}
+                  </h4>
+                  <p className="text-primary text-sm font-medium mb-3">
+                    {guide.role}
+                  </p>
+                  <p className="text-muted-foreground text-sm">
+                    {guide.bio}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
