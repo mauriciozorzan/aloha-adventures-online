@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Facebook, Instagram, Waves } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 const Footer = () => {
   return (
@@ -8,10 +9,18 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <Waves className="w-8 h-8" />
-              <h3 className="text-2xl font-serif font-bold">Wave & Wander</h3>
+            <div className="flex items-center gap-3 mb-4">
+              <img 
+                src={logo} 
+                alt="Wave & Wander Adventure Tours" 
+                className="w-14 h-14 rounded-full object-cover"
+              />
+              <div>
+                <h3 className="text-xl font-serif font-bold">Wave & Wander</h3>
+                <p className="text-sm text-primary-foreground/70">Adventure Tours</p>
+              </div>
             </div>
+            <p className="text-sm italic text-coral-light mb-4">Where adventure meets aloha</p>
             <p className="text-primary-foreground/70 mb-6">
               Discover the authentic beauty of Oahu with our expert local guides. 
               Creating unforgettable Hawaiian adventures since 2018.
@@ -113,7 +122,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-primary-foreground/10 mt-12 pt-8 text-center text-primary-foreground/50">
-          <p>© {new Date().getFullYear()} Wave & Wander. All rights reserved. Made with 🌺 in Oahu.</p>
+          <p>© {new Date().getFullYear()} Wave & Wander Adventure Tours. All rights reserved. Made with 🌺 in Oahu.</p>
         </div>
       </div>
     </footer>

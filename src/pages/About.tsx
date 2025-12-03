@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Shield, Heart, Award, Users, MapPin, Compass } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 const team = [
   {
@@ -53,11 +54,17 @@ const About = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-tropical text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">
+          <img 
+            src={logo} 
+            alt="Wave & Wander Adventure Tours Logo" 
+            className="w-24 h-24 mx-auto rounded-full shadow-xl object-cover mb-6"
+          />
+          <h1 className="text-4xl md:text-5xl font-serif font-bold mb-2">
             About Wave & Wander
           </h1>
-          <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-            Local guides, authentic experiences, unforgettable memories.
+          <p className="text-lg text-coral-light italic">Adventure Tours</p>
+          <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto mt-4">
+            Where adventure meets aloha — local guides, authentic experiences, unforgettable memories.
           </p>
         </div>
       </section>
@@ -74,7 +81,7 @@ const About = () => {
             </h2>
             <div className="text-muted-foreground text-lg leading-relaxed space-y-4">
               <p>
-                Wave & Wander was founded in 2018 by Kai Nakamura, a lifelong Oahu resident who grew up 
+                Wave & Wander Adventure Tours was founded in 2018 by Kai Nakamura, a lifelong Oahu resident who grew up 
                 hiking the same trails and swimming the same beaches we now share with our guests. After 
                 years of watching tour buses rush visitors through Hawaii without showing them its true 
                 beauty, Kai decided to create something different.
