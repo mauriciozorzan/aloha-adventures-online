@@ -7,13 +7,27 @@ import logo from "@/assets/logo.jpg";
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background Video */}
       <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Stunning aerial view of Oahu Hawaii coastline with mountains and turquoise ocean"
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
           className="w-full h-full object-cover"
-        />
+          poster={heroImage}
+        >
+          <source
+            src="https://videos.pexels.com/video-files/1409899/1409899-uhd_2560_1440_25fps.mp4"
+            type="video/mp4"
+          />
+          {/* Fallback to image if video doesn't load */}
+          <img
+            src={heroImage}
+            alt="Stunning aerial view of Oahu Hawaii coastline with mountains and turquoise ocean"
+            className="w-full h-full object-cover"
+          />
+        </video>
         <div className="absolute inset-0 bg-gradient-hero" />
       </div>
 
