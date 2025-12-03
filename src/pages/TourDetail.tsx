@@ -235,10 +235,32 @@ const TourDetail = () => {
           {/* Booking Sidebar */}
           <div className="lg:col-span-1">
             <div className="sticky top-24">
-              <div className="bg-gradient-ocean text-primary-foreground rounded-t-2xl p-6 text-center">
-                <p className="text-sm opacity-90">Starting from</p>
-                <p className="text-4xl font-bold">${tour.price}</p>
-                <p className="text-sm opacity-90">per person</p>
+              {/* Pricing Header */}
+              <div className="bg-gradient-ocean text-primary-foreground rounded-t-2xl p-6">
+                <p className="text-center text-sm opacity-90 mb-1">
+                  {tour.tourType === 'sunrise' ? 'Sunrise Tour' : '8-Hour Boutique Tour'}
+                </p>
+                <p className="text-center text-3xl font-bold mb-4">Rates</p>
+                
+                {/* Pricing Table */}
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between items-center py-2 border-b border-white/20">
+                    <span>1 guest</span>
+                    <span className="font-semibold">${tour.pricing[1]}</span>
+                  </div>
+                  <div className="flex justify-between items-center py-2 border-b border-white/20">
+                    <span>2 guests</span>
+                    <span className="font-semibold">${tour.pricing[2]} each</span>
+                  </div>
+                  <div className="flex justify-between items-center py-2 border-b border-white/20">
+                    <span>3 guests</span>
+                    <span className="font-semibold">${tour.pricing[3]} each</span>
+                  </div>
+                  <div className="flex justify-between items-center py-2">
+                    <span>4+ guests</span>
+                    <span className="font-semibold">${tour.pricing[4]} each</span>
+                  </div>
+                </div>
               </div>
               <BookingForm tour={tour} />
             </div>
