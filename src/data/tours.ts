@@ -20,8 +20,8 @@ export interface Tour {
 export const tours: Tour[] = [
   {
     id: 'koko-head-sunrise',
-    name: 'Koko Head Sunrise Hike',
-    shortDescription: 'Conquer the famous "Stairway to Heaven" railway trail and watch the sunrise paint the sky.',
+    name: 'Kokohead Warrior Sunrise',
+    shortDescription: 'A fiery, breathtaking sunrise climb above the island. Intense, rewarding, unforgettable.',
     fullDescription: 'Challenge yourself on one of Oahu\'s most iconic hikes as you climb the 1,048 railroad ties to the summit of Koko Head Crater. Arriving before dawn, you\'ll experience the magic of watching the sun rise over the Pacific Ocean, casting golden light across the southeastern coastline. Our guides share the history of this WWII-era tramway while ensuring your safety on the climb. The panoramic views from the top—spanning from Diamond Head to Makapuu—make every step worth it.',
     duration: '3 hours',
     price: 75,
@@ -54,8 +54,8 @@ export const tours: Tour[] = [
   },
   {
     id: 'lanikai-pillbox-sunrise',
-    name: 'Lanikai Pillbox Sunrise Trek',
-    shortDescription: 'A moderate sunrise hike to WWII bunkers with breathtaking views of the Mokulua Islands.',
+    name: 'Lanikai Pillbox Pastel Sunrise',
+    shortDescription: 'A soft, dreamy sunrise over the Mokulua islands with pastel skies and gentle ridge views.',
     fullDescription: 'Experience Oahu\'s most picturesque sunrise from the famous Lanikai Pillboxes. This moderate hike takes you up a ridge trail to historic WWII military bunkers, now decorated with colorful murals. As the sun rises over the Mokulua Islands, you\'ll understand why this is considered one of the most beautiful views in all of Hawaii. The turquoise waters of Lanikai below create a stunning contrast against the golden morning light.',
     duration: '2.5 hours',
     price: 65,
@@ -87,15 +87,16 @@ export const tours: Tour[] = [
   },
   {
     id: 'windward-coast-adventure',
-    name: 'Windward Coast Adventure',
-    shortDescription: 'Discover the lush windward side with pristine beaches, hiking, and local charm.',
-    fullDescription: 'Escape to Oahu\'s stunning windward coast for a full day of adventure and relaxation. Begin with a morning hike to the Lanikai Pillboxes for panoramic views, then descend to the powdery white sands of Kailua Beach—consistently rated one of America\'s best beaches. Explore charming Kailua town with its boutique shops and local eateries, before swimming in the crystal-clear waters of Lanikai Beach with views of the iconic Mokulua Islands.',
-    duration: '7 hours',
+    name: 'Kailua & Windward Coast Dream Tour',
+    shortDescription: 'Turquoise coastlines, breezy lookouts, Kailua town, Makapuʻu, Waimānalo, and scenic beach moments.',
+    fullDescription: 'Escape to Oahu\'s stunning windward coast for a full day of adventure and relaxation. Experience the dramatic Makapuʻu lookout, explore the pristine sands of Waimānalo Beach, and discover the charming town of Kailua with its boutique shops and local eateries. Swim in crystal-clear waters at Lanikai Beach with views of the iconic Mokulua Islands. This comprehensive tour showcases the best of Oahu\'s windward side.',
+    duration: '8 hours',
     price: 149,
     location: 'Windward Oahu',
     image: '/tours/windward.jpg',
     highlights: [
-      'Hike to Lanikai Pillboxes',
+      'Makapuʻu Point scenic lookout',
+      'Pristine Waimānalo Beach visit',
       'Relax on famous Kailua Beach',
       'Swim at pristine Lanikai Beach',
       'Explore Kailua town shops & cafes',
@@ -113,26 +114,59 @@ export const tours: Tour[] = [
       'Personal shopping',
       'Additional food/drinks'
     ],
-    difficulty: 'Moderate',
+    difficulty: 'Easy',
     groupSize: 'Max 12 people',
     meetingPoint: 'Waikiki hotel pickup',
     startTimes: ['7:00 AM'],
     category: 'sightseeing'
   },
   {
+    id: 'west-side-golden-coast',
+    name: 'West Side Golden Coast Tour',
+    shortDescription: 'Warm light, rugged landscapes, and a golden sunset along Oʻahu\'s dramatic west coast.',
+    fullDescription: 'Discover the untamed beauty of Oahu\'s west side, where dramatic cliffs meet pristine beaches and golden sunsets paint the sky. This full-day adventure takes you through rugged landscapes, secluded beaches, and authentic Hawaiian communities rarely visited by tourists. Experience the raw, natural beauty of Kaena Point, relax on uncrowded beaches, and end the day with a spectacular sunset over the Pacific.',
+    duration: '8 hours',
+    price: 159,
+    location: 'West Oahu',
+    image: '/tours/west-side.jpg',
+    highlights: [
+      'Kaena Point natural area',
+      'Secluded west side beaches',
+      'Dramatic coastal cliff views',
+      'Authentic local communities',
+      'Golden sunset finale'
+    ],
+    included: [
+      'Hotel pickup/drop-off (Waikiki)',
+      'Professional guide',
+      'Lunch at local spot',
+      'Beach time',
+      'Sunset viewing'
+    ],
+    notIncluded: [
+      'Gratuities',
+      'Additional snacks/drinks'
+    ],
+    difficulty: 'Easy',
+    groupSize: 'Max 10 people',
+    meetingPoint: 'Waikiki hotel pickup',
+    startTimes: ['10:00 AM'],
+    category: 'sightseeing'
+  },
+  {
     id: 'north-shore-experience',
-    name: 'North Shore Experience',
-    shortDescription: 'Surf culture, famous beaches, and the laid-back vibes of legendary Haleiwa Town.',
-    fullDescription: 'Journey to Oahu\'s legendary North Shore, the surfing capital of the world. Stroll through historic Haleiwa Town with its art galleries, shrimp trucks, and famous shave ice. Visit world-renowned surf beaches including Waimea Bay, where winter waves can reach 30 feet, and snorkel the protected waters of Sharks Cove. Experience the authentic, laid-back Hawaiian culture that makes the North Shore unlike anywhere else on the island.',
+    name: 'North Shore Classic Hawaiʻi Tour',
+    shortDescription: 'Explore iconic surf beaches, tidepools, Waimea Bay lookouts, and Haleʻiwa\'s charm.',
+    fullDescription: 'Journey to Oahu\'s legendary North Shore, the surfing capital of the world. Stroll through historic Haleʻiwa Town with its art galleries, shrimp trucks, and famous shave ice. Visit world-renowned surf beaches including Waimea Bay, explore tidepools at Sharks Cove, and watch surfers ride massive waves (seasonal). Experience the authentic, laid-back Hawaiian culture that makes the North Shore unlike anywhere else on the island.',
     duration: '8 hours',
     price: 169,
     location: 'North Shore',
     image: '/tours/north-shore.jpg',
     highlights: [
-      'Explore historic Haleiwa Town',
+      'Explore historic Haleʻiwa Town',
       'Famous Matsumoto\'s shave ice stop',
-      'Visit Waimea Bay & watch surfers',
-      'Snorkel at Sharks Cove',
+      'Visit Waimea Bay lookouts',
+      'Explore tidepools at Sharks Cove',
       'See Sunset Beach & Pipeline'
     ],
     included: [
@@ -155,19 +189,19 @@ export const tours: Tour[] = [
   },
   {
     id: 'kaneohe-scenic-tour',
-    name: 'Kaneohe Bay & Temples',
-    shortDescription: 'Ancient temples, dramatic cliffs, and the serene beauty of Kaneohe Bay.',
-    fullDescription: 'Discover the spiritual and natural wonders of Oahu\'s Kaneohe region. Visit the stunning Byodo-In Temple, a replica of a 950-year-old Japanese temple nestled against the dramatic Ko\'olau Mountains. Walk along Kualoa Beach with its iconic Chinaman\'s Hat island view, and stop at the legendary Crouching Lion rock formation. This tour showcases a side of Oahu that most visitors never see—lush valleys, sacred sites, and breathtaking mountain scenery.',
-    duration: '6 hours',
+    name: 'Kāneʻohe Valley Sanctuary Tour',
+    shortDescription: 'A peaceful retreat through gardens, temples, Koʻolau cliffs, and lush Windward beauty.',
+    fullDescription: 'Discover the spiritual and natural wonders of Oahu\'s Kāneʻohe region. Visit the stunning Byodo-In Temple, a replica of a 950-year-old Japanese temple nestled against the dramatic Koʻolau Mountains. Walk along Kualoa Beach with its iconic Chinaman\'s Hat island view, and stop at the legendary Crouching Lion rock formation. This tour showcases a peaceful, serene side of Oahu—lush valleys, sacred sites, and breathtaking mountain scenery.',
+    duration: '8 hours',
     price: 139,
-    location: 'Kaneohe',
+    location: 'Kāneʻohe',
     image: '/tours/kaneohe.jpg',
     highlights: [
       'Visit Byodo-In Temple',
       'Ring the sacred temple bell',
       'Kualoa Beach & Chinaman\'s Hat views',
       'See Crouching Lion rock formation',
-      'Ko\'olau Mountain scenic views'
+      'Koʻolau Mountain scenic views'
     ],
     included: [
       'Hotel pickup/drop-off',
@@ -187,44 +221,11 @@ export const tours: Tour[] = [
     category: 'sightseeing'
   },
   {
-    id: 'makapuu-waimanalo',
-    name: 'Makapuu & Waimanalo Discovery',
-    shortDescription: 'Coastal lighthouse hike and the stunning untouched beauty of Waimanalo Beach.',
-    fullDescription: 'Experience Oahu\'s rugged eastern coastline on this unforgettable adventure. Hike the paved Makapuu Point Lighthouse Trail for sweeping ocean views and whale watching opportunities (seasonal). Descend to hidden tide pools and sea caves, then continue to Waimanalo Beach—a 5-mile stretch of pristine sand that remains one of Hawaii\'s best-kept secrets. This tour showcases the raw, natural beauty of Oahu away from the tourist crowds.',
-    duration: '5 hours',
-    price: 99,
-    location: 'East Oahu',
-    image: '/tours/makapuu.jpg',
-    highlights: [
-      'Makapuu Lighthouse Trail hike',
-      'Whale watching (November-April)',
-      'Explore tide pools & sea caves',
-      'Visit pristine Waimanalo Beach',
-      'Sea Life Park viewpoint'
-    ],
-    included: [
-      'Professional guide',
-      'Transportation',
-      'Light snacks and water',
-      'Beach time',
-      'Binoculars for whale watching'
-    ],
-    notIncluded: [
-      'Gratuities',
-      'Lunch'
-    ],
-    difficulty: 'Moderate',
-    groupSize: 'Max 10 people',
-    meetingPoint: 'Waikiki hotel pickup',
-    startTimes: ['7:30 AM', '1:00 PM'],
-    category: 'hiking'
-  },
-  {
     id: 'custom-adventure',
-    name: 'Tailor Your Own Adventure',
-    shortDescription: 'Design your perfect Hawaiian day with a customized private tour experience.',
+    name: 'Build-Your-Own Island Adventure',
+    shortDescription: 'Curate your perfect day — coastlines, gardens, temples, food stops, or hidden gems.',
     fullDescription: 'Your dream Hawaiian adventure, your way. Work with our expert guides to create a personalized itinerary that matches your interests, fitness level, and bucket list. Whether you want to combine multiple hikes, focus on photography, seek out hidden waterfalls, or explore off-the-beaten-path beaches, we\'ll craft an unforgettable experience just for you. Perfect for families, honeymoons, or anyone who wants a truly unique Oahu adventure.',
-    duration: 'Flexible (4-10 hours)',
+    duration: '8 hours',
     price: 299,
     location: 'Island-wide',
     image: '/tours/custom.jpg',
