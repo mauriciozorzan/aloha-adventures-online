@@ -62,15 +62,18 @@ const TourCard = ({ tour, index = 0 }: TourCardProps) => {
           {tour.shortDescription}
         </p>
 
-        <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-          <div className="flex items-center gap-1">
-            <Clock className="w-4 h-4" />
-            <span>{tour.duration}</span>
+        <div className="flex flex-col gap-2 text-sm text-muted-foreground mb-4">
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-1">
+              <Clock className="w-4 h-4" />
+              <span>{tour.duration}</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <Users className="w-4 h-4" />
+              <span>Up to 4 guests</span>
+            </div>
           </div>
-          <div className="flex items-center gap-1">
-            <Users className="w-4 h-4" />
-            <span>{tour.groupSize}</span>
-          </div>
+          <p className="text-xs text-muted-foreground/70">(adjustments available up to 8)</p>
         </div>
 
         <div className="flex items-center justify-between">
