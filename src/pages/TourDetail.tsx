@@ -10,18 +10,18 @@ import { ArrowLeft, Clock, MapPin, Users, CheckCircle, XCircle, Mountain } from 
 import kokoHeadImg from "@/assets/tours/koko-head.jpg";
 import lanikaiPillboxImg from "@/assets/tours/lanikai-pillbox.jpg";
 import windwardImg from "@/assets/tours/windward.jpg";
+import westSideImg from "@/assets/tours/west-side.jpg";
 import northShoreImg from "@/assets/tours/north-shore.jpg";
 import kaneoheImg from "@/assets/tours/kaneohe.jpg";
-import makapuuImg from "@/assets/tours/makapuu.jpg";
 import customImg from "@/assets/tours/custom.jpg";
 
 const tourImages: Record<string, string> = {
   'koko-head-sunrise': kokoHeadImg,
   'lanikai-pillbox-sunrise': lanikaiPillboxImg,
   'windward-coast-adventure': windwardImg,
+  'west-side-golden-coast': westSideImg,
   'north-shore-experience': northShoreImg,
   'kaneohe-scenic-tour': kaneoheImg,
-  'makapuu-waimanalo': makapuuImg,
   'custom-adventure': customImg,
 };
 
