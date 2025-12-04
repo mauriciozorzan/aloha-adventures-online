@@ -1,22 +1,34 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.jpg";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'Tours', path: '/tours' },
   { name: 'Pricing', path: '/pricing' },
   { name: 'Testimonials', path: '/testimonials' },
-  { name: 'About', path: '/about' },
   { name: 'Contact', path: '/contact' },
+];
+
+const aboutLinks = [
+  { name: 'About Wave & Wander', path: '/about' },
+  { name: 'Meet Your Guides', path: '/meet-your-guides' },
+  { name: 'Traveling with Aloha', path: '/traveling-with-aloha' },
 ];
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -28,6 +40,7 @@ const Header = () => {
   }, []);
 
   const isActive = (path: string) => location.pathname === path;
+  const isAboutActive = aboutLinks.some(link => location.pathname === link.path);
 
   return (
     <header className={cn(
@@ -75,6 +88,34 @@ const Header = () => {
                 {link.name}
               </Link>
             ))}
+            
+            {/* About Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className={cn(
+                "font-medium transition-colors relative py-1 flex items-center gap-1 outline-none",
+                isScrolled 
+                  ? isAboutActive ? "text-primary" : "text-foreground/80 hover:text-primary"
+                  : isAboutActive ? "text-primary-foreground" : "text-primary-foreground/80 hover:text-primary-foreground",
+                isAboutActive && "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-current"
+              )}>
+                About <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-56">
+                {aboutLinks.map((link) => (
+                  <DropdownMenuItem key={link.path} asChild>
+                    <Link 
+                      to={link.path}
+                      className={cn(
+                        "w-full cursor-pointer",
+                        isActive(link.path) && "bg-primary/10 text-primary"
+                      )}
+                    >
+                      {link.name}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
@@ -114,6 +155,27 @@ const Header = () => {
                   {link.name}
                 </Link>
               ))}
+              
+              {/* Mobile About Submenu */}
+              <div className="border-t border-border pt-2 mt-2">
+                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-4 py-2 block">About</span>
+                {aboutLinks.map((link) => (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={cn(
+                      "font-medium py-3 px-4 pl-6 rounded-lg transition-colors block",
+                      isActive(link.path) 
+                        ? "bg-primary/10 text-primary" 
+                        : "text-foreground/80 hover:bg-muted"
+                    )}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+              
               <Button variant="hero" size="lg" className="mt-2" asChild>
                 <Link to="/tours" onClick={() => setIsMenuOpen(false)}>Book Now</Link>
               </Button>

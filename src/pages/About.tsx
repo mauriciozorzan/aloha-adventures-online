@@ -2,33 +2,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Shield, Heart, Compass, MapPin, Leaf, Users, Footprints } from "lucide-react";
+import { Shield, Heart, Compass, MapPin } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 import heroImage from "@/assets/tours/kaneohe.jpg";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-
-import samanthaMoonImg from "@/assets/guides/samantha-moon.jpg";
-import joelSearlesImg from "@/assets/guides/joel-searles.jpg";
-
-const team = [
-  {
-    name: "Samantha Moon",
-    role: "Co-Founder & Lead Guide",
-    bio: "After seven years of exploring Oʻahu's trails, beaches, and hidden gems, Samantha co-founded Wave & Wander to share authentic island experiences with travelers seeking more than the typical tourist route.",
-    image: samanthaMoonImg
-  },
-  {
-    name: "Joel Searles",
-    role: "Co-Founder & Lead Guide",
-    bio: "Joel's passion for exploration and storytelling brings every tour to life, creating unforgettable memories on Oahu's trails and beaches with his infectious enthusiasm for adventure.",
-    image: joelSearlesImg
-  }
-];
 
 const values = [
   {
@@ -165,111 +141,6 @@ const About = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Meet Your Guides - Accordion */}
-      <section className="py-20 bg-secondary">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              The People Behind the Adventures
-            </span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-2">
-              Meet Your Guides
-            </h2>
-          </div>
-
-          <div className="max-w-3xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
-              {team.map((member, index) => (
-                <AccordionItem 
-                  key={member.name} 
-                  value={`guide-${index}`}
-                  className="bg-card rounded-2xl shadow-card border-none overflow-hidden"
-                >
-                  <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                    <div className="flex items-center gap-4 text-left">
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-16 h-16 rounded-full object-cover"
-                      />
-                      <div>
-                        <h3 className="font-serif font-bold text-lg text-card-foreground">{member.name}</h3>
-                        <p className="text-primary font-medium text-sm">{member.role}</p>
-                      </div>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-6">
-                    <div className="flex flex-col md:flex-row gap-6 pt-2">
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full md:w-48 h-48 rounded-xl object-cover"
-                      />
-                      <div className="flex-1">
-                        <p className="text-muted-foreground leading-relaxed">{member.bio}</p>
-                      </div>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </div>
-      </section>
-
-      {/* Traveling with Aloha */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Our Philosophy
-            </span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-2">
-              Traveling with Aloha
-            </h2>
-          </div>
-
-          <div className="max-w-3xl mx-auto">
-            <p className="text-muted-foreground text-lg leading-relaxed text-center mb-12">
-              At Wave & Wander, we believe that how you travel matters as much as where you go. 
-              Traveling with aloha means approaching every experience with respect, gratitude, and mindfulness.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Leaf className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="font-semibold text-lg text-foreground mb-2">Respect the Land</h3>
-                <p className="text-muted-foreground text-sm">
-                  We tread lightly, follow Leave No Trace principles, and teach guests to honor the 'āina (land) that hosts us.
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="font-semibold text-lg text-foreground mb-2">Honor the Culture</h3>
-                <p className="text-muted-foreground text-sm">
-                  We share Hawaiian history and traditions authentically, fostering understanding and appreciation for this special place.
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Footprints className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="font-semibold text-lg text-foreground mb-2">Travel Mindfully</h3>
-                <p className="text-muted-foreground text-sm">
-                  Small groups, slow paces, and intentional moments—we believe the journey is just as important as the destination.
-                </p>
-              </div>
-            </div>
           </div>
         </div>
       </section>

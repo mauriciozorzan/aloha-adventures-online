@@ -9,6 +9,8 @@ import TourDetail from "./pages/TourDetail";
 import Pricing from "./pages/Pricing";
 import Testimonials from "./pages/Testimonials";
 import About from "./pages/About";
+import MeetYourGuides from "./pages/MeetYourGuides";
+import TravelingWithAloha from "./pages/TravelingWithAloha";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
@@ -27,6 +29,8 @@ const App = () => (
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/about" element={<About />} />
+          <Route path="/meet-your-guides" element={<MeetYourGuides />} />
+          <Route path="/traveling-with-aloha" element={<TravelingWithAloha />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
