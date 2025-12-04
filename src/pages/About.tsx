@@ -18,13 +18,13 @@ import joelSearlesImg from "@/assets/guides/joel-searles.jpg";
 const team = [
   {
     name: "Samantha Moon",
-    role: "Founder & Lead Guide",
-    bio: "After seven years of exploring Oʻahu's trails, beaches, and hidden gems, Samantha founded Wave & Wander to share authentic island experiences with travelers seeking more than the typical tourist route.",
+    role: "Co-Founder & Lead Guide",
+    bio: "After seven years of exploring Oʻahu's trails, beaches, and hidden gems, Samantha co-founded Wave & Wander to share authentic island experiences with travelers seeking more than the typical tourist route.",
     image: samanthaMoonImg
   },
   {
     name: "Joel Searles",
-    role: "Lead Guide",
+    role: "Co-Founder & Lead Guide",
     bio: "Joel's passion for exploration and storytelling brings every tour to life, creating unforgettable memories on Oahu's trails and beaches with his infectious enthusiasm for adventure.",
     image: joelSearlesImg
   }
@@ -98,7 +98,7 @@ const About = () => {
                 Wave & Wander Adventure Tours was born in 2025 from a simple belief: the best way to experience Hawaiʻi is to slow down, lace up your shoes, feel the earth beneath you, and let the trail tell its story.
               </p>
               <p>
-                Founded by Samantha Moon, Wave & Wander began as a passion project—an idea shaped by seven years of living, exploring, hiking, and falling deeply in love with the island of Oʻahu. Although not originally from Hawaiʻi, Samantha arrived with a traveler's curiosity and stayed because the land, the ocean, and the people continually revealed new layers of beauty, history, and aloha. Over time, friends and visitors began asking for hikes, hidden gems, and off-the-beaten-path adventures—something more personal than a large commercial tour and more intentional than a sightseeing shuttle.
+                Founded by best friends and co-guides Samantha Moon and Joel Searles, Wave & Wander grew from years of shared hikes, sunrise climbs, ocean days, and an inspiring love for the land. Although not originally from Hawaiʻi, Samantha and Joel arrived with a traveler's curiosity and stayed because the land, the ocean, and the people continually revealed new layers of beauty, history, and aloha. Over time, friends and visitors began asking for hikes, hidden gems, and off-the-beaten-path adventures—something more personal than a large commercial tour and more intentional than a sightseeing shuttle.
               </p>
               <p className="text-primary font-semibold text-xl text-center italic">
                 Wave & Wander was built to fill that space.
