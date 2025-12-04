@@ -23,7 +23,7 @@ const Footer = () => {
             <p className="text-sm italic text-coral-light mb-4">Where adventure meets aloha</p>
             <p className="text-primary-foreground/70 mb-6">
               Discover the authentic beauty of Oahu with our expert local guides. 
-              Creating unforgettable Hawaiian adventures since 2018.
+              Creating unforgettable Hawaiian adventures.
             </p>
             <div className="flex gap-4">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-primary-foreground/20 transition-colors">

@@ -36,7 +36,7 @@ const Tours = () => {
             Our Adventures
           </h1>
           <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-            From sunrise hikes to hidden beaches, find your perfect Oahu adventure.
+            Discover the authentic beauty of Oahu with our expert local guides. Creating unforgettable Hawaiian adventures.
           </p>
         </div>
       </section>
