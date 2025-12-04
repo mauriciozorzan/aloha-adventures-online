@@ -108,7 +108,7 @@ const Contact = () => {
                   <li className="flex items-start gap-2">
                     <Clock className="w-4 h-4 text-primary mt-0.5" />
                     <span className="text-muted-foreground">
-                      <strong className="text-foreground">Group Size:</strong> We keep groups small (8-14 max) for a better experience.
+                      <strong className="text-foreground">Group Size:</strong> We keep groups small (4-8 max) for a better experience.
                     </span>
                   </li>
                 </ul>
