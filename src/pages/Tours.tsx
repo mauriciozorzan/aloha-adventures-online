@@ -4,6 +4,7 @@ import TourCard from "@/components/TourCard";
 import { tours } from "@/data/tours";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import heroImage from "@/assets/tours/north-shore.jpg";
 
 const categories = [
   { id: 'all', name: 'All Tours' },
@@ -24,8 +25,13 @@ const Tours = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-tropical text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
+      <section className="pt-32 pb-16 text-primary-foreground relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroImage})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/60 to-foreground/80" />
+        <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-4">
             Our Adventures
           </h1>

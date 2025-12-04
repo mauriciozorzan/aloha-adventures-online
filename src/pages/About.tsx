@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Shield, Heart, Award, Users, MapPin, Compass } from "lucide-react";
 import logo from "@/assets/logo.jpg";
+import heroImage from "@/assets/tours/kaneohe.jpg";
 
 const team = [
   {
@@ -52,8 +53,13 @@ const About = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-tropical text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
+      <section className="pt-32 pb-16 text-primary-foreground relative">
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${heroImage})` }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/60 to-foreground/80" />
+        <div className="container mx-auto px-4 text-center relative z-10">
           <img 
             src={logo} 
             alt="Wave & Wander Adventure Tours Logo" 
