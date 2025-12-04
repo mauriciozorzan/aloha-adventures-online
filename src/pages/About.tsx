@@ -2,25 +2,25 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Shield, Heart, Award, Users, MapPin, Compass } from "lucide-react";
+import { Shield, Heart, Compass, MapPin } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 import heroImage from "@/assets/tours/kaneohe.jpg";
 
+import samanthaMoonImg from "@/assets/guides/samantha-moon.jpg";
+import joelSearlesImg from "@/assets/guides/joel-searles.jpg";
+
 const team = [
   {
-    name: "Kai Nakamura",
+    name: "Samantha Moon",
     role: "Founder & Lead Guide",
-    bio: "Born and raised on Oahu's windward side, Kai has been exploring the island since childhood. After 10 years in outdoor education, he founded Wave & Wander to share his love of Hawaii with visitors from around the world."
+    bio: "After seven years of exploring Oʻahu's trails, beaches, and hidden gems, Samantha founded Wave & Wander to share authentic island experiences with travelers seeking more than the typical tourist route.",
+    image: samanthaMoonImg
   },
   {
-    name: "Leilani Torres",
-    role: "Operations Manager",
-    bio: "Leilani brings her background in hospitality and passion for sustainable tourism to ensure every guest has a seamless, memorable experience while respecting the 'āina (land)."
-  },
-  {
-    name: "Marcus Chen",
-    role: "Senior Guide",
-    bio: "A certified wilderness first responder and ocean safety expert, Marcus specializes in our hiking adventures and ensures the highest safety standards on every tour."
+    name: "Joel Searles",
+    role: "Lead Guide",
+    bio: "Joel's passion for exploration and storytelling brings every tour to life, creating unforgettable memories on Oahu's trails and beaches with his infectious enthusiasm for adventure.",
+    image: joelSearlesImg
   }
 ];
 
@@ -78,29 +78,33 @@ const About = () => {
       {/* Our Story */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="text-primary font-semibold text-sm uppercase tracking-wider">
-              Our Story
-            </span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-2 mb-6">
-              Born from a Love of the 'Āina
-            </h2>
-            <div className="text-muted-foreground text-lg leading-relaxed space-y-4">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-8">
+              <span className="text-primary font-semibold text-sm uppercase tracking-wider">
+                Our Story
+              </span>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-2">
+                Born from a Love of the 'Āina
+              </h2>
+            </div>
+            <div className="text-muted-foreground text-lg leading-relaxed space-y-6">
               <p>
-                Wave & Wander Adventure Tours was founded in 2018 by Kai Nakamura, a lifelong Oahu resident who grew up 
-                hiking the same trails and swimming the same beaches we now share with our guests. After 
-                years of watching tour buses rush visitors through Hawaii without showing them its true 
-                beauty, Kai decided to create something different.
+                Wave & Wander Adventure Tours was born in 2025 from a simple belief: the best way to experience Hawaiʻi is to slow down, lace up your shoes, feel the earth beneath you, and let the trail tell its story.
               </p>
               <p>
-                We believe the best way to experience Hawaii isn't from a bus window—it's with your feet 
-                on the trail, the salt spray on your face, and a local by your side sharing stories passed 
-                down through generations. Our small group tours take you to the places that make Oahu 
-                special: hidden beaches, sunrise viewpoints, and local favorites that aren't in any guidebook.
+                Founded by Samantha Moon, Wave & Wander began as a passion project—an idea shaped by seven years of living, exploring, hiking, and falling deeply in love with the island of Oʻahu. Although not originally from Hawaiʻi, Samantha arrived with a traveler's curiosity and stayed because the land, the ocean, and the people continually revealed new layers of beauty, history, and aloha. Over time, friends and visitors began asking for hikes, hidden gems, and off-the-beaten-path adventures—something more personal than a large commercial tour and more intentional than a sightseeing shuttle.
+              </p>
+              <p className="text-primary font-semibold text-xl text-center italic">
+                Wave & Wander was built to fill that space.
               </p>
               <p>
-                Today, our team of passionate local guides continues that mission, helping thousands of 
-                visitors each year discover the authentic Hawaii they came looking for.
+                We are not a high-volume, "hop in, hop out" tour company. We're a boutique, adventure-minded experience crafted for travelers who want to <em>feel</em> Hawaiʻi rather than just observe it. Our tours blend hiking, ocean views, breathtaking sunrises, and local history with genuine connection and small-group warmth. We go places big tour buses don't touch—quiet ridgelines, tucked-away lookouts, and stories that live between the waves and the wind.
+              </p>
+              <p>
+                At our core, Wave & Wander exists to share the aloha spirit in a way that is respectful, responsible, and deeply human. We honor the land, tread lightly, and prioritize experiences that uplift Hawaiʻi's natural beauty rather than overwhelm it. Every tour is intentionally crafted: the pace, the storytelling, the moments of silence, the scenic pauses, and the shared excitement of discovery.
+              </p>
+              <p className="text-foreground font-medium text-center">
+                Wave & Wander is for those who wander with heart—people who love adventure, culture, and finding meaning in the places they explore.
               </p>
             </div>
           </div>
@@ -112,16 +116,16 @@ const About = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">6+</div>
-              <div className="text-muted-foreground">Years of Adventures</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">2025</div>
+              <div className="text-muted-foreground">Founded</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">15K+</div>
-              <div className="text-muted-foreground">Happy Guests</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">8 max</div>
+              <div className="text-muted-foreground">Guests Per Tour</div>
             </div>
             <div>
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">4.9★</div>
-              <div className="text-muted-foreground">Average Rating</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">5★</div>
+              <div className="text-muted-foreground">Service Quality</div>
             </div>
             <div>
               <div className="text-4xl md:text-5xl font-bold text-primary mb-2">100%</div>
@@ -167,19 +171,25 @@ const About = () => {
               The People Behind the Adventures
             </span>
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-2">
-              Meet Our Team
+              Meet Your Guides
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {team.map((member) => (
-              <div key={member.name} className="bg-card rounded-2xl p-6 shadow-card text-center">
-                <div className="w-24 h-24 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-10 h-10 text-primary" />
+              <div key={member.name} className="bg-card rounded-2xl overflow-hidden shadow-card text-center">
+                <div className="aspect-square overflow-hidden">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="font-serif font-bold text-xl text-card-foreground mb-1">{member.name}</h3>
-                <p className="text-primary font-medium text-sm mb-4">{member.role}</p>
-                <p className="text-muted-foreground text-sm">{member.bio}</p>
+                <div className="p-6">
+                  <h3 className="font-serif font-bold text-xl text-card-foreground mb-1">{member.name}</h3>
+                  <p className="text-primary font-medium text-sm mb-4">{member.role}</p>
+                  <p className="text-muted-foreground text-sm">{member.bio}</p>
+                </div>
               </div>
             ))}
           </div>
