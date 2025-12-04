@@ -16,7 +16,6 @@ const navLinks = [
   { name: 'Tours', path: '/tours' },
   { name: 'Pricing', path: '/pricing' },
   { name: 'Testimonials', path: '/testimonials' },
-  { name: 'Contact', path: '/contact' },
 ];
 
 const aboutLinks = [
@@ -116,6 +115,20 @@ const Header = () => {
                 ))}
               </DropdownMenuContent>
             </DropdownMenu>
+
+            {/* Contact Link */}
+            <Link
+              to="/contact"
+              className={cn(
+                "font-medium transition-colors relative py-1",
+                isScrolled 
+                  ? isActive('/contact') ? "text-primary" : "text-foreground/80 hover:text-primary"
+                  : isActive('/contact') ? "text-primary-foreground" : "text-primary-foreground/80 hover:text-primary-foreground",
+                isActive('/contact') && "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-current"
+              )}
+            >
+              Contact
+            </Link>
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
@@ -175,6 +188,20 @@ const Header = () => {
                   </Link>
                 ))}
               </div>
+
+              {/* Contact */}
+              <Link
+                to="/contact"
+                className={cn(
+                  "font-medium py-3 px-4 rounded-lg transition-colors",
+                  isActive('/contact') 
+                    ? "bg-primary/10 text-primary" 
+                    : "text-foreground/80 hover:bg-muted"
+                )}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
               
               <Button variant="hero" size="lg" className="mt-2" asChild>
                 <Link to="/tours" onClick={() => setIsMenuOpen(false)}>Book Now</Link>
