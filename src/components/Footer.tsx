@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Facebook, Instagram } from "lucide-react";
+import { Mail, MapPin, Facebook, Instagram } from "lucide-react";
 import logo from "@/assets/logo.jpg";
 
 const Footer = () => {
@@ -104,12 +104,6 @@ const Footer = () => {
                   Honolulu, Oahu<br />
                   Hawaii, USA
                 </span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="w-5 h-5 flex-shrink-0 text-coral" />
-                <a href="tel:+18085551234" className="text-primary-foreground/70 hover:text-primary-foreground transition-colors">
-                  (808) 555-1234
-                </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 flex-shrink-0 text-coral" />

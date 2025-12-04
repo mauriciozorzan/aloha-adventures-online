@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
+import { Mail, MapPin, Clock } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -45,7 +45,7 @@ const Contact = () => {
             Get in Touch
           </h1>
           <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-            Have questions? We'd love to hear from you. Send us a message or give us a call.
+            Have questions? We'd love to hear from you. Send us a message.
           </p>
         </div>
       </section>
@@ -62,34 +62,12 @@ const Contact = () => {
               <div className="space-y-6 mb-8">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">Phone</h3>
-                    <a href="tel:+18085551234" className="text-primary hover:underline">(808) 555-1234</a>
-                    <p className="text-sm text-muted-foreground">Mon-Sun, 7am-7pm HST</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
                     <Mail className="w-6 h-6 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Email</h3>
                     <a href="mailto:waveandwanderadventuretours@gmail.com" className="text-primary hover:underline text-sm break-all">waveandwanderadventuretours@gmail.com</a>
                     <p className="text-sm text-muted-foreground">We respond within 24 hours</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <MessageCircle className="w-6 h-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">WhatsApp</h3>
-                    <a href="https://wa.me/18085551234" className="text-primary hover:underline">+1 (808) 555-1234</a>
-                    <p className="text-sm text-muted-foreground">Chat with us directly</p>
                   </div>
                 </div>
 

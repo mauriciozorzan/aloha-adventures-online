@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.jpg";
@@ -78,16 +78,6 @@ const Header = () => {
           </nav>
 
           <div className="hidden lg:flex items-center gap-4">
-            <a 
-              href="tel:+18085551234" 
-              className={cn(
-                "flex items-center gap-2 transition-colors",
-                isScrolled ? "text-muted-foreground hover:text-primary" : "text-primary-foreground/80 hover:text-primary-foreground"
-              )}
-            >
-              <Phone className="w-4 h-4" />
-              <span className="font-medium">(808) 555-1234</span>
-            </a>
             <Button variant="hero" size="lg" asChild>
               <Link to="/tours">Book Now</Link>
             </Button>
@@ -124,10 +114,6 @@ const Header = () => {
                   {link.name}
                 </Link>
               ))}
-              <a href="tel:+18085551234" className="flex items-center gap-2 text-muted-foreground py-3 px-4">
-                <Phone className="w-4 h-4" />
-                <span className="font-medium">(808) 555-1234</span>
-              </a>
               <Button variant="hero" size="lg" className="mt-2" asChild>
                 <Link to="/tours" onClick={() => setIsMenuOpen(false)}>Book Now</Link>
               </Button>
