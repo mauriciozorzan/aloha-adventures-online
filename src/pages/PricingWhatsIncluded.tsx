@@ -124,12 +124,10 @@ const PricingWhatsIncluded = () => {
               {[
                 "Professional local guide",
                 "Refreshments & snacks",
-                "Photos of your adventure",
                 "Small group experience (max 8 guests)",
                 "Local stories & Hawaiian history",
                 "Safety equipment as needed",
-                "Hotel pickup & drop-off (Waikiki area)",
-                "All entrance fees included"
+                "Hotel pickup & drop-off (Waikiki area)"
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-3 bg-palm/10 rounded-lg p-4">
                   <Check className="w-5 h-5 text-palm flex-shrink-0" />
@@ -149,7 +147,8 @@ const PricingWhatsIncluded = () => {
                 "Gratuities (appreciated but not required)",
                 "Personal expenses & souvenirs",
                 "Travel insurance",
-                "Meals beyond provided snacks"
+                "Meals beyond provided snacks",
+                "Entrance fees (if applicable)"
               ].map((item, index) => (
                 <div key={index} className="flex items-center gap-3 bg-secondary rounded-lg p-4">
                   <X className="w-5 h-5 text-muted-foreground flex-shrink-0" />
