@@ -112,13 +112,6 @@ const CancellationsRefunds = () => {
                     If you need to reschedule, please contact us as soon as possible. Rescheduling requests made more than 48 hours in advance are accommodated at no additional charge, subject to availability. Requests made within 48 hours may incur a $25 rescheduling fee.
                   </p>
                 </div>
-
-                <div>
-                  <h4 className="font-semibold text-foreground mb-2">Group Bookings</h4>
-                  <p>
-                    For group bookings of 6 or more guests, a 50% deposit is required at booking. The remaining balance is due 72 hours before the tour. Cancellation policies apply to the full booking amount.
-                  </p>
-                </div>
               </div>
             </div>
 
