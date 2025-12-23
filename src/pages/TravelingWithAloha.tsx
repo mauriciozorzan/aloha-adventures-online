@@ -11,8 +11,8 @@ const TravelingWithAloha = () => {
       {/* Hero Section */}
       <section className="pt-32 pb-16 text-primary-foreground relative">
         <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
+          className="absolute inset-0 bg-cover"
+          style={{ backgroundImage: `url(${heroImage})`, backgroundPosition: 'center 30%' }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/70 via-foreground/60 to-foreground/80" />
         <div className="container mx-auto px-4 text-center relative z-10">
