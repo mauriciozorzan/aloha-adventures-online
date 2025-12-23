@@ -42,7 +42,7 @@ export const getPricePerPerson = (pricing: TieredPricing, guests: number): numbe
 export const tourFAQs = [
   {
     question: "What should I bring?",
-    answer: "Comfortable walking shoes, sunscreen, hat, sunglasses, and a light jacket. For sunrise tours, dress in layers as mornings can be cool."
+    answer: "Sturdy hiking shoes or footwear with good grip are recommended for trail stability. Additionally, bring sunscreen, a hat, sunglasses, and a light jacket. For sunrise tours, dress in layers as mornings can be cool."
   },
   {
     question: "What if it rains?",
