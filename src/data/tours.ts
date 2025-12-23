@@ -86,12 +86,12 @@ export const tours: Tour[] = [
     included: [
       'Professional hiking guide',
       'Headlamps for pre-dawn start',
-      'Light breakfast at summit',
       'Bottled water',
       'Photos of your adventure'
     ],
     notIncluded: [
       'Hotel pickup/drop-off',
+      'Meals (food stops available upon request)',
       'Gratuities',
       'Hiking shoes (required)'
     ],
@@ -124,12 +124,13 @@ export const tours: Tour[] = [
     included: [
       'Expert hiking guide',
       'Headlamps',
-      'Light snacks and water',
+      'Bottled water',
       'Photo opportunities',
       'Local history and stories'
     ],
     notIncluded: [
       'Transportation',
+      'Meals (food stops available upon request)',
       'Gratuities'
     ],
     difficulty: 'Moderate',
@@ -162,14 +163,13 @@ export const tours: Tour[] = [
     included: [
       'Hotel pickup/drop-off (Waikiki)',
       'Professional guide',
-      'Light breakfast',
       'Beach equipment (chairs, umbrella)',
       'Snorkeling gear'
     ],
     notIncluded: [
+      'Meals (food stops available upon request)',
       'Gratuities',
-      'Personal shopping',
-      'Additional food/drinks'
+      'Personal shopping'
     ],
     difficulty: 'Easy',
     groupSize: 'Max 8 people',
@@ -204,8 +204,8 @@ export const tours: Tour[] = [
       'Sunset viewing'
     ],
     notIncluded: [
-      'Gratuities',
-      'Additional snacks/drinks'
+      'Meals (food stops available upon request)',
+      'Gratuities'
     ],
     difficulty: 'Easy',
     groupSize: 'Max 8 people',
@@ -236,13 +236,13 @@ export const tours: Tour[] = [
     included: [
       'Round-trip transportation',
       'Professional guide',
-      'Shave ice treat',
       'Snorkeling equipment',
       'Beach time'
     ],
     notIncluded: [
+      'Meals (food stops available upon request)',
       'Gratuities',
-      'Additional food/souvenirs'
+      'Souvenirs'
     ],
     difficulty: 'Easy',
     groupSize: 'Max 8 people',
@@ -277,6 +277,7 @@ export const tours: Tour[] = [
       'Bottled water'
     ],
     notIncluded: [
+      'Meals (food stops available upon request)',
       'Gratuities',
       'Souvenirs'
     ],
@@ -313,8 +314,8 @@ export const tours: Tour[] = [
       'Flexible pickup location'
     ],
     notIncluded: [
-      'Entrance fees (varies)',
-      'Meals (can be arranged)',
+      'Entrance fees (varies by itinerary)',
+      'Meals (food stops available upon request)',
       'Gratuities'
     ],
     difficulty: 'Easy',
