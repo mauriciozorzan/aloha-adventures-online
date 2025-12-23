@@ -162,7 +162,7 @@ export const tours: Tour[] = [
     included: [
       'Hotel pickup/drop-off (Waikiki)',
       'Professional guide',
-      'Light breakfast and lunch',
+      'Light breakfast',
       'Beach equipment (chairs, umbrella)',
       'Snorkeling gear'
     ],
@@ -200,7 +200,6 @@ export const tours: Tour[] = [
     included: [
       'Hotel pickup/drop-off (Waikiki)',
       'Professional guide',
-      'Lunch at local spot',
       'Beach time',
       'Sunset viewing'
     ],
@@ -237,7 +236,6 @@ export const tours: Tour[] = [
     included: [
       'Round-trip transportation',
       'Professional guide',
-      'Lunch at famous shrimp truck',
       'Shave ice treat',
       'Snorkeling equipment',
       'Beach time'
@@ -276,7 +274,6 @@ export const tours: Tour[] = [
       'Hotel pickup/drop-off',
       'Temple entrance fee',
       'Professional guide',
-      'Local lunch',
       'Bottled water'
     ],
     notIncluded: [
@@ -312,7 +309,6 @@ export const tours: Tour[] = [
     included: [
       'Private professional guide',
       'Luxury vehicle transportation',
-      'Custom meal arrangements',
       'All equipment needed',
       'Flexible pickup location'
     ],
