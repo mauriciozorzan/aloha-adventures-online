@@ -28,6 +28,8 @@ interface TourCardProps {
 }
 
 const TourCard = ({ tour, index = 0 }: TourCardProps) => {
+  const isKokoHead = tour.id === 'koko-head-sunrise';
+
   return (
     <Link
       to={`/tour/${tour.id}`}
@@ -43,7 +45,11 @@ const TourCard = ({ tour, index = 0 }: TourCardProps) => {
             tour.id === 'koko-head-sunrise' ? 'object-right-top' : ''
           }`}
         />
-        <div className="absolute top-4 right-4 flex flex-col items-end gap-1">
+        <div
+          className={`absolute flex flex-col items-end gap-1 ${
+            isKokoHead ? 'bottom-4 right-4' : 'top-4 right-4'
+          }`}
+        >
           <span className="bg-coral text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold">
             {tour.tourType === 'sunrise' ? '$150–$320/person' : '$195–$520/person'}
           </span>
@@ -51,7 +57,9 @@ const TourCard = ({ tour, index = 0 }: TourCardProps) => {
             Varies by group size
           </span>
         </div>
-        <div className="absolute top-4 left-4">
+        <div
+          className={`absolute ${isKokoHead ? 'bottom-4 left-4' : 'top-4 left-4'}`}
+        >
           <span className="bg-background/90 backdrop-blur-sm text-foreground px-3 py-1 rounded-full text-sm font-medium">
             {tour.location}
           </span>
