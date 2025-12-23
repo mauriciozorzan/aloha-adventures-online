@@ -8,6 +8,7 @@ import { Mail, MapPin, Clock } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import heroImage from "@/assets/contact-hero.jpg";
+import sectionImage from "@/assets/contact-section.jpg";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -112,6 +113,15 @@ const Contact = () => {
                     </span>
                   </li>
                 </ul>
+              </div>
+
+              {/* Section Image */}
+              <div className="mt-8 rounded-2xl overflow-hidden shadow-card">
+                <img 
+                  src={sectionImage} 
+                  alt="Beautiful Hawaiian beach with turquoise water and palm trees" 
+                  className="w-full h-64 object-cover"
+                />
               </div>
             </div>
 
