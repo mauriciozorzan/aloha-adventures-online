@@ -58,7 +58,7 @@ export const tourFAQs = [
   },
   {
     question: "What's your cancellation policy?",
-    answer: "Free cancellation up to 24 hours before your tour. Cancellations within 24 hours are non-refundable."
+    answer: "Free cancellation up to 48 hours before your tour. Cancellations within 48 hours are non-refundable."
   }
 ];
 
