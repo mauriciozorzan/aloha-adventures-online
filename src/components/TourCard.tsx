@@ -39,7 +39,9 @@ const TourCard = ({ tour, index = 0 }: TourCardProps) => {
         <img
           src={tourImages[tour.id]}
           alt={tour.name}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 ${
+            tour.id === 'koko-head-sunrise' ? 'object-right-top' : ''
+          }`}
         />
         <div className="absolute top-4 right-4 flex flex-col items-end gap-1">
           <span className="bg-coral text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold">
