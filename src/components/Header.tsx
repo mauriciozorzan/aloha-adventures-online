@@ -14,7 +14,6 @@ import {
 const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'Tours', path: '/tours' },
-  { name: 'Pricing', path: '/pricing' },
   { name: 'Testimonials', path: '/testimonials' },
 ];
 
@@ -23,10 +22,17 @@ const aboutLinks = [
   { name: 'Traveling with Aloha', path: '/traveling-with-aloha' },
 ];
 
+const bookingLinks = [
+  { name: 'Pricing & What\'s Included', path: '/pricing-whats-included' },
+  { name: 'Cancellations & Refunds', path: '/cancellations-refunds' },
+  { name: 'Weather, Safety & Tour Changes', path: '/weather-safety-changes' },
+];
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -39,6 +45,7 @@ const Header = () => {
 
   const isActive = (path: string) => location.pathname === path;
   const isAboutActive = aboutLinks.some(link => location.pathname === link.path);
+  const isBookingActive = bookingLinks.some(link => location.pathname === link.path);
 
   return (
     <header className={cn(
@@ -87,6 +94,34 @@ const Header = () => {
               </Link>
             ))}
             
+            {/* Booking & Pricing Policies Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className={cn(
+                "font-medium transition-colors relative py-1 flex items-center gap-1 outline-none",
+                isScrolled 
+                  ? isBookingActive ? "text-primary" : "text-foreground/80 hover:text-primary"
+                  : isBookingActive ? "text-primary-foreground" : "text-primary-foreground/80 hover:text-primary-foreground",
+                isBookingActive && "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-current"
+              )}>
+                Booking & Pricing Policies <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="w-64">
+                {bookingLinks.map((link) => (
+                  <DropdownMenuItem key={link.path} asChild>
+                    <Link 
+                      to={link.path}
+                      className={cn(
+                        "w-full cursor-pointer",
+                        isActive(link.path) && "bg-primary/10 text-primary"
+                      )}
+                    >
+                      {link.name}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
             {/* About Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className={cn(
@@ -172,6 +207,26 @@ const Header = () => {
               <div className="border-t border-border pt-2 mt-2">
                 <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-4 py-2 block">About</span>
                 {aboutLinks.map((link) => (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className={cn(
+                      "font-medium py-3 px-4 pl-6 rounded-lg transition-colors block",
+                      isActive(link.path) 
+                        ? "bg-primary/10 text-primary" 
+                        : "text-foreground/80 hover:bg-muted"
+                    )}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+              </div>
+
+              {/* Mobile Booking Submenu */}
+              <div className="border-t border-border pt-2 mt-2">
+                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider px-4 py-2 block">Booking & Pricing</span>
+                {bookingLinks.map((link) => (
                   <Link
                     key={link.path}
                     to={link.path}

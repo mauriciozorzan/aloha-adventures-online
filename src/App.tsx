@@ -6,11 +6,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Tours from "./pages/Tours";
 import TourDetail from "./pages/TourDetail";
-import Pricing from "./pages/Pricing";
 import Testimonials from "./pages/Testimonials";
 import About from "./pages/About";
 import TravelingWithAloha from "./pages/TravelingWithAloha";
 import Contact from "./pages/Contact";
+import PricingWhatsIncluded from "./pages/PricingWhatsIncluded";
+import CancellationsRefunds from "./pages/CancellationsRefunds";
+import WeatherSafetyChanges from "./pages/WeatherSafetyChanges";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,7 +27,9 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/tours" element={<Tours />} />
           <Route path="/tour/:id" element={<TourDetail />} />
-          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/pricing-whats-included" element={<PricingWhatsIncluded />} />
+          <Route path="/cancellations-refunds" element={<CancellationsRefunds />} />
+          <Route path="/weather-safety-changes" element={<WeatherSafetyChanges />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/about" element={<About />} />
           <Route path="/traveling-with-aloha" element={<TravelingWithAloha />} />
