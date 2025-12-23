@@ -46,8 +46,8 @@ const TourCard = ({ tour, index = 0 }: TourCardProps) => {
           }`}
         />
         <div
-          className={`absolute flex flex-col items-end gap-1 ${
-            isKokoHead ? 'bottom-4 right-4' : 'top-4 right-4'
+          className={`absolute top-4 flex flex-col items-end gap-1 ${
+            isKokoHead ? 'left-4' : 'right-4'
           }`}
         >
           <span className="bg-coral text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold">
@@ -58,7 +58,7 @@ const TourCard = ({ tour, index = 0 }: TourCardProps) => {
           </span>
         </div>
         <div
-          className={`absolute ${isKokoHead ? 'bottom-4 left-4' : 'top-4 left-4'}`}
+          className={`absolute top-4 ${isKokoHead ? 'right-4' : 'left-4'}`}
         >
           <span className="bg-background/90 backdrop-blur-sm text-foreground px-3 py-1 rounded-full text-sm font-medium">
             {tour.location}
