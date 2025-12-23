@@ -74,7 +74,7 @@ const About = () => {
                 Wave & Wander Adventure Tours was born in 2025 from a simple belief: the best way to experience Hawaiʻi is to slow down, lace up your shoes, feel the earth beneath you, and let the trail tell its story.
               </p>
               <p>
-                Founded by best friends and co-guides Samantha Moon and Joel Searles, Wave & Wander grew from years of shared hikes, sunrise climbs, ocean days, and an inspiring love for the land. Although not originally from Hawaiʻi, Samantha and Joel arrived with a traveler's curiosity and stayed because the land, the ocean, and the people continually revealed new layers of beauty, history, and aloha. Over time, friends and visitors began asking for hikes, hidden gems, and off-the-beaten-path adventures—something more personal than a large commercial tour and more intentional than a sightseeing shuttle.
+                Wave & Wander grew from years of shared hikes, sunrise climbs, ocean days, and an inspiring love for the land. Our founders arrived in Hawaiʻi with a traveler's curiosity and stayed because the land, the ocean, and the people continually revealed new layers of beauty, history, and aloha. Over time, friends and visitors began asking for hikes, hidden gems, and off-the-beaten-path adventures—something more personal than a large commercial tour and more intentional than a sightseeing shuttle.
               </p>
               <p className="text-primary font-semibold text-xl text-center italic">
                 Wave & Wander was built to fill that space.
