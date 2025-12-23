@@ -254,7 +254,7 @@ export const tours: Tour[] = [
     id: 'kaneohe-scenic-tour',
     name: 'Kāneʻohe Valley Sanctuary Tour',
     shortDescription: 'A peaceful retreat through gardens, temples, Koʻolau cliffs, and lush Windward beauty.',
-    fullDescription: 'Discover the spiritual and natural wonders of Oahu\'s Kāneʻohe region. Visit the stunning Byodo-In Temple, a replica of a 950-year-old Japanese temple nestled against the dramatic Koʻolau Mountains. Walk along Kualoa Beach with its iconic Chinaman\'s Hat island view, and stop at the legendary Crouching Lion rock formation. This tour showcases a peaceful, serene side of Oahu—lush valleys, sacred sites, and breathtaking mountain scenery.',
+    fullDescription: 'Discover the spiritual and natural wonders of Oahu\'s Kāneʻohe region. Visit the stunning Byodo-In Temple, a replica of a 950-year-old Japanese temple nestled against the dramatic Koʻolau Mountains. Walk along Kualoa Beach with its iconic Mokoliʻi Island view, and stop at the legendary Crouching Lion rock formation. This tour showcases a peaceful, serene side of Oahu—lush valleys, sacred sites, and breathtaking mountain scenery.',
     duration: '8 hours',
     price: 240,
     pricing: BOUTIQUE_PRICING,
@@ -264,7 +264,7 @@ export const tours: Tour[] = [
     highlights: [
       'Visit Byodo-In Temple',
       'Ring the sacred temple bell',
-      'Kualoa Beach & Chinaman\'s Hat views',
+      'Kualoa Beach & Mokoliʻi Island views',
       'See Crouching Lion rock formation',
       'Koʻolau Mountain scenic views'
     ],
