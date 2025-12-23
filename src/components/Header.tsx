@@ -20,7 +20,6 @@ const navLinks = [
 
 const aboutLinks = [
   { name: 'About Wave & Wander', path: '/about' },
-  { name: 'Meet Your Guides', path: '/meet-your-guides' },
   { name: 'Traveling with Aloha', path: '/traveling-with-aloha' },
 ];
 
