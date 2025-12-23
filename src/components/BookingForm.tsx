@@ -210,7 +210,7 @@ const BookingForm = ({ tour }: BookingFormProps) => {
       </Button>
 
       <p className="text-xs text-center text-muted-foreground mt-4">
-        Free cancellation up to 24 hours before the tour
+        Free cancellation up to 48 hours before your tour
       </p>
     </form>
   );
