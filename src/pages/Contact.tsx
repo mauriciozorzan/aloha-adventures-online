@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Mail, MapPin, Clock } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
-import heroImage from "@/assets/tours/makapuu.jpg";
+import heroImage from "@/assets/contact-hero.jpg";
 
 const Contact = () => {
   const { toast } = useToast();

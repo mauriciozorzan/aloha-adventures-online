@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Leaf, Users, Footprints } from "lucide-react";
-import heroImage from "@/assets/tours/makapuu.jpg";
+import heroImage from "@/assets/traveling-aloha-hero.jpg";
 
 const TravelingWithAloha = () => {
   return (
